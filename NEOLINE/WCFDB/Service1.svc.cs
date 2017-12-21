@@ -10,6 +10,7 @@ namespace WCFForOnlineShopCenter
 {
     public class Service1 : IService1
     {
+
         public void RegistrationUser(string login, string pass, string nick, string email)
         {
             using (OnlineShop shop = new OnlineShop())
@@ -41,24 +42,33 @@ namespace WCFForOnlineShopCenter
             }
         }
 
-        public bool LoginUserEnter(string login, string pass)
+        public string LoginUserEnter(string login, string pass)
         {
             User user = null;
-            bool IsUserExist;
+            string IsUserExistKind;
+
             try
             {
                 using (OnlineShop shop = new OnlineShop())
                 {
                     user = shop.Users.Where(c => c.Login == login && c.Password == pass).Single();
                 }
-                IsUserExist = true;
+
+                if (user.IsAdmin == true)
+                {
+                    IsUserExistKind = "Admin";
+                }
+                else
+                {
+                    IsUserExistKind = "User";
+                }
             }
             catch (Exception)
             {
-                IsUserExist = false;
+                IsUserExistKind = "Your login or password isn`t exist or you don`t registred.Do you want register now.";
             }
 
-            return IsUserExist;
+            return IsUserExistKind;
         }
 
         public bool VerificationLogin(string login)

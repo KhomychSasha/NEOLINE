@@ -8,6 +8,7 @@ using System.Text;
 
 namespace WCFForOnlineShopCenter
 {
+    
     [ServiceContract]
     public interface IService1
     {
@@ -18,7 +19,7 @@ namespace WCFForOnlineShopCenter
         void AddProduct(string productName, string Descr, string Photo);
 
         [OperationContract]
-        bool LoginUserEnter(string login,string pass);
+        string LoginUserEnter(string login,string pass);
 
         [OperationContract]
         bool VerificationLogin(string login);
@@ -28,5 +29,7 @@ namespace WCFForOnlineShopCenter
 
         [OperationContract]
         bool VerificationEmail(string email);
+
+        
     }
 }
