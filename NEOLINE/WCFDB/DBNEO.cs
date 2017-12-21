@@ -17,7 +17,7 @@ namespace WCFForOnlineShopCenter
 
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<Admin> Admins { get; set; }
+
     }
 
     public class User
@@ -38,6 +38,8 @@ namespace WCFForOnlineShopCenter
         public string Email { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
+
+        public bool IsAdmin { get; set; }
     }
 
     public class Product
@@ -57,28 +59,7 @@ namespace WCFForOnlineShopCenter
 
         [ForeignKey("UserLogin")]
         public virtual User UsersProducts { get; set; }
-
-        public string AdminLogin { get; set; }
-
-        [ForeignKey("AdminLogin")]
-        public virtual Admin AdminsProducts { get; set; }
-
+       
     }
 
-    public class Admin
-    {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-
-        [Required]
-        public string Login { get; set; }
-
-        [Required]
-        public string Password { get; set; }
-
-        [Required]
-        public string Email { get; set; }
-
-        public virtual ICollection<Product> Products { get; set; }
-    }
 }

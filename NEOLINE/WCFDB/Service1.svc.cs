@@ -12,9 +12,9 @@ namespace WCFForOnlineShopCenter
     {
         public void RegistrationUser(string login, string pass, string nick, string email)
         {
-            using (OnlineShop user = new OnlineShop())
+            using (OnlineShop shop = new OnlineShop())
             {
-                user.Users.Add(new User()
+                shop.Users.Add(new User()
                 {
                     Login = login,
                     Password = pass,
@@ -22,38 +22,103 @@ namespace WCFForOnlineShopCenter
                     Email = email
                 });
 
-                user.SaveChanges();
+                shop.SaveChanges();
             }
         }
 
         public void AddProduct(string productName, string descr, string photo)
         {
-            using (OnlineShop user = new OnlineShop())
+            using (OnlineShop shop = new OnlineShop())
             {
-                user.Products.Add(new Product()
+                shop.Products.Add(new Product()
                 {
                     ProductName = productName,
                     Description = descr,
                     Photo = photo
                 });
 
-                user.SaveChanges();
+                shop.SaveChanges();
             }
         }
 
-        public void AddAdmin(string login, string pass, string email)
+        public bool LoginUserEnter(string login, string pass)
         {
-            using (OnlineShop user = new OnlineShop())
+            User user = null;
+            bool IsUserExist;
+            try
             {
-                user.Admins.Add(new Admin()
+                using (OnlineShop shop = new OnlineShop())
                 {
-                    Login = login,
-                    Password = pass,
-                    Email = email
-                });
-
-                user.SaveChanges();
+                    user = shop.Users.Where(c => c.Login == login && c.Password == pass).Single();
+                }
+                IsUserExist = true;
             }
+            catch (Exception)
+            {
+                IsUserExist = false;
+            }
+
+            return IsUserExist;
+        }
+
+        public bool VerificationLogin(string login)
+        {
+            User user = null;
+            bool LoginVerified;
+            try
+            {
+                using (OnlineShop shop = new OnlineShop())
+                {
+                    user = shop.Users.Where(c => c.Login == login).Single();
+                }
+                LoginVerified = true;
+            }
+            catch (Exception)
+            {
+                LoginVerified = false;
+            }
+
+            return LoginVerified;
+        }
+
+        public bool VerificationNickname(string nickname)
+        {
+            User user = null;
+            bool NickNameVerified;
+            try
+            {
+                using (OnlineShop shop = new OnlineShop())
+                {
+                    user = shop.Users.Where(c => c.Nickname == nickname).Single();
+                }
+                NickNameVerified = true;
+            }
+            catch(Exception)
+            {
+                NickNameVerified = false;
+            }
+
+            return NickNameVerified;
+        }
+
+        public bool VerificationEmail(string email)
+        {
+            User user = null;
+            bool EmailVerified;
+            try
+            {
+                using (OnlineShop shop = new OnlineShop())
+                {
+                    user = shop.Users.Where(c => c.Email == email).Single();
+                }
+                EmailVerified = true;
+            }
+            catch (Exception)
+            {
+                EmailVerified = false;
+            }
+
+            return EmailVerified;
         }
     }
 }

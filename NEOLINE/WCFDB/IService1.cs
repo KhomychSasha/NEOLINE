@@ -18,6 +18,15 @@ namespace WCFForOnlineShopCenter
         void AddProduct(string productName, string Descr, string Photo);
 
         [OperationContract]
-        void AddAdmin(string login, string pass, string email);
+        bool LoginUserEnter(string login,string pass);
+
+        [OperationContract]
+        bool VerificationLogin(string login);
+
+        [OperationContract]
+        bool VerificationNickname(string nickname);
+
+        [OperationContract]
+        bool VerificationEmail(string email);
     }
 }
