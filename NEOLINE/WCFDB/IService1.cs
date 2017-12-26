@@ -28,8 +28,6 @@ namespace WCFForOnlineShopCenter
         bool VerificationNickname(string nickname);
 
         [OperationContract]
-        bool VerificationEmail(string email);
-
-        
+        bool VerificationEmail(string email);      
     }
 }

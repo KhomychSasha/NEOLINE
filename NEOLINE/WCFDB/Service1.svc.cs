@@ -115,6 +115,7 @@ namespace WCFForOnlineShopCenter
         {
             User user = null;
             bool EmailVerified;
+
             try
             {
                 using (OnlineShop shop = new OnlineShop())
