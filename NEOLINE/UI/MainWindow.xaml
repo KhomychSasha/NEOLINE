@@ -9,6 +9,7 @@
     <Grid>
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="188,106,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
         <TextBlock TextAlignment ="Center" VerticalAlignment="Center" FontSize="36">Sasha</TextBlock>
-        
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="96,184,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+
     </Grid>
 </Window>
