@@ -27,7 +27,7 @@ namespace WCFForOnlineShopCenter
             }
         }
 
-        public void AddProduct(string productName, string descr, string photo)
+        public void AddProduct(string productName, string descr, string photo,string login)
         {
             using (OnlineShop shop = new OnlineShop())
             {
@@ -35,20 +35,19 @@ namespace WCFForOnlineShopCenter
                 {
                     ProductName = productName,
                     Description = descr,
-                    Photo = photo
+                    Photo = photo,
+                    UserLogin = login
                 });
 
                 shop.SaveChanges();
             }
         }
 
-        public string LoginUserEnter(string login, string pass)
+        public bool VerificationOnAdmin(string login, string pass)
         {
             User user = null;
-            string IsUserExistKind;
+            bool IsUserExistAdmin = false;
 
-            try
-            {
                 using (OnlineShop shop = new OnlineShop())
                 {
                     user = shop.Users.Where(c => c.Login == login && c.Password == pass).Single();
@@ -56,19 +55,36 @@ namespace WCFForOnlineShopCenter
 
                 if (user.IsAdmin == true)
                 {
-                    IsUserExistKind = "Admin";
+                    IsUserExistAdmin = true;
                 }
                 else
                 {
-                    IsUserExistKind = "User";
+                    IsUserExistAdmin = false;
                 }
+            
+
+            return IsUserExistAdmin;
+        }
+
+        public bool VerificationOnExistUser(string login, string pass)
+        {
+            User user = null;
+            bool IsUserExistUser;
+
+            try
+            {
+                using (OnlineShop shop = new OnlineShop())
+                {
+                    user = shop.Users.Where(c => c.Login == login && c.Password == pass).Single();
+                }
+                IsUserExistUser = true;
             }
             catch (Exception)
             {
-                IsUserExistKind = "Your login or password isn`t exist or you don`t registred.Do you want register now.";
+                IsUserExistUser = false;
             }
 
-            return IsUserExistKind;
+            return IsUserExistUser;
         }
 
         public bool VerificationLogin(string login)
