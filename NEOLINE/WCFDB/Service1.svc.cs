@@ -10,7 +10,6 @@ namespace WCFForOnlineShopCenter
 {
     public class Service1 : IService1
     {
-
         public void RegistrationUser(string login, string pass, string nick, string email)
         {
             using (OnlineShop shop = new OnlineShop())
@@ -75,7 +74,7 @@ namespace WCFForOnlineShopCenter
             {
                 using (OnlineShop shop = new OnlineShop())
                 {
-                    user = shop.Users.Where(c => c.Login == login && c.Password == pass).Single();
+                    user = shop.Users.Where(c => c.Login == login && c.Password == pass).Single(); var result = shop.Products.Where(c => c.UserLogin == login);
                 }
                 IsUserExistUser = true;
             }
@@ -84,13 +83,14 @@ namespace WCFForOnlineShopCenter
                 IsUserExistUser = false;
             }
 
-            return IsUserExistUser;
+            return IsUserExistUser; 
         }
 
         public bool VerificationLogin(string login)
         {
             User user = null;
             bool LoginVerified;
+
             try
             {
                 using (OnlineShop shop = new OnlineShop())
@@ -111,6 +111,7 @@ namespace WCFForOnlineShopCenter
         {
             User user = null;
             bool NickNameVerified;
+
             try
             {
                 using (OnlineShop shop = new OnlineShop())
