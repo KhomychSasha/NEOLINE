@@ -14,9 +14,9 @@ namespace WCFForOnlineShopCenter
         {
         }
 
-
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
 
     }
 
@@ -55,11 +55,39 @@ namespace WCFForOnlineShopCenter
 
         public string Photo { get; set; }
 
+        [Required]
+        public int Amount { get; set; }
+
+        [Required]
+        public int Price { get; set; }
+
+
+
         public string UserLogin { get; set; }
 
         [ForeignKey("UserLogin")]
         public virtual User UsersProducts { get; set; }
-       
+
+
+
+        public string CategoryName { get; set; }
+
+        [ForeignKey("CategoryName")]
+        public virtual Category Categories { get; set; }
+
+
+    }
+
+    public class Category
+    {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        [Required]
+        public string CategoryName { get; set; }
+
+        public virtual ICollection<Product> ProductsInCategory { get; set; }
+
     }
 
 }

@@ -26,7 +26,7 @@ namespace WCFForOnlineShopCenter
             }
         }
 
-        public void AddProduct(string productName, string descr, string photo,string login)
+        public void AddProduct(string productName, string descr, string photo, string login, int AmountOfProduct,int price)
         {
             using (OnlineShop shop = new OnlineShop())
             {
@@ -35,9 +35,50 @@ namespace WCFForOnlineShopCenter
                     ProductName = productName,
                     Description = descr,
                     Photo = photo,
-                    UserLogin = login
+                    UserLogin = login,
+                    Amount = AmountOfProduct,
+                    Price = price
                 });
 
+                shop.SaveChanges();
+            }
+        }
+
+        public void UpdatePrice(string nameProduct, int price)
+        {
+            Product product = null;
+
+            using (OnlineShop shop = new OnlineShop())
+            {
+                product = shop.Products.Where(c => c.ProductName == nameProduct).Single();
+
+                product.Price = price;
+                shop.SaveChanges();
+            }
+        }
+
+        public void UpdateAmount(string nameProduct, int amountProduct)
+        {
+            Product product = null;
+
+            using (OnlineShop shop = new OnlineShop())
+            {
+                product = shop.Products.Where(c => c.ProductName == nameProduct).Single();
+
+                product.Amount = amountProduct;
+                shop.SaveChanges();
+            }
+        }
+
+        public void UpdateDescription(string nameProduct, string description)
+        {
+            Product product = null;
+
+            using (OnlineShop shop = new OnlineShop())
+            {
+                product = shop.Products.Where(c => c.ProductName == nameProduct).Single();
+
+                product.Description = description;
                 shop.SaveChanges();
             }
         }
@@ -86,6 +127,36 @@ namespace WCFForOnlineShopCenter
             return IsUserExistUser; 
         }
 
+        public List<Product> UserProduct(string login)
+        {
+            List<Product> list = new List<Product>();
+
+            using (OnlineShop shop = new OnlineShop())
+            {    
+                foreach (var i in shop.Products.Where(c => c.UserLogin == login))
+                {
+                    list.Add(i);
+                }
+            }
+
+            return list;
+        }
+
+        public List<Product> WarehoseProductAddedByAdmin()
+        {
+            List<Product> list = new List<Product>();
+
+            using (OnlineShop shop = new OnlineShop())
+            {
+                foreach (var i in shop.Products.Where(c => c.UserLogin == null))
+                {
+                    list.Add(i);
+                }
+            }
+
+            return list;
+        }
+
         public bool VerificationLogin(string login)
         {
             User user = null;
@@ -97,6 +168,7 @@ namespace WCFForOnlineShopCenter
                 {
                     user = shop.Users.Where(c => c.Login == login).Single();
                 }
+
                 LoginVerified = true;
             }
             catch (Exception)
