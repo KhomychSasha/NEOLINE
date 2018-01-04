@@ -44,15 +44,15 @@ namespace DAL
             }
         }
 
-        public void UpdatePrice(string nameProduct, int price)
+        public void UpdatePrice(Product product)
         {
-            Product product = null;
+            Product prod = null;
 
             using (OnlineShop shop = new OnlineShop())
             {
-                product = shop.Products.Where(c => c.ProductName == nameProduct).Single();
+                prod = shop.Products.Where(c => c.ProductName == prod.ProductName).Single();
 
-                product.Price = price;
+                prod.Price = prod.Price;
                 shop.SaveChanges();
             }
         }

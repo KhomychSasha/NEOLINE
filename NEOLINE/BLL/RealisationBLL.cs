@@ -96,16 +96,34 @@ namespace BLL
 
         public void UpdatePrice(string nameProduct, int price)
         {
+            Product user = new Product()
+            {
+                ProductName = nameProduct
+            };
+
+            user.Price = price;
+           
+        }
+
+        void UpdateAmount(string nameProduct, int amountProduct)
+        {
 
         }
 
-        void UpdateAmount(string nameProduct, int amountProduct);
+        void UpdateDescription(string nameProduct, string description)
+        {
 
-        void UpdateDescription(string nameProduct, string description);
+        }
 
-        List<Product> UserProduct(string login);
+        List<Product> UserProduct(string login)
+        {
 
-        List<Product> WarehoseProductAddedByAdmin();
+        }
+
+        List<Product> WarehoseProductAddedByAdmin()
+        {
+
+        }
 
 
     }
