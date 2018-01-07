@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public interface IBLLgm
+    public interface IBLL
     {
         void AddUser(string login, string pass, string nick, string email);
 

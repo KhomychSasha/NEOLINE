@@ -75,7 +75,6 @@ namespace BLL
 
         public bool VerificationNickname(string nickname)
         {
-
             User user = new User()
             {
                 Nickname = nickname,
@@ -96,33 +95,50 @@ namespace BLL
 
         public void UpdatePrice(string nameProduct, int price)
         {
-            Product user = new Product()
+            Product product = new Product()
             {
-                ProductName = nameProduct
+                ProductName = nameProduct,
+                Price = price
             };
 
-            user.Price = price;
-           
+            dal.UpdatePrice(product);      
         }
 
-        void UpdateAmount(string nameProduct, int amountProduct)
+        public void UpdateAmount(string nameProduct, int amountProduct)
         {
+            Product product = new Product()
+            {
+                ProductName = nameProduct,
+                Amount = amountProduct
+            };
 
+            dal.UpdateAmount(product);
         }
 
-        void UpdateDescription(string nameProduct, string description)
+        public void UpdateDescription(string nameProduct, string description)
         {
+            Product product = new Product()
+            {
+                ProductName = nameProduct,
+                Description = description
+            };
 
+            dal.UpdateDescription(product);
         }
 
-        List<Product> UserProduct(string login)
+        public List<Product> UserProduct(string login)
         {
+            Product prod = new Product()
+            {
+                UserLogin = login
+            };
 
+            return dal.UserProduct(prod);
         }
 
-        List<Product> WarehoseProductAddedByAdmin()
+        public List<Product> WarehoseProductAddedByAdmin()
         {
-
+            return dal.WarehoseProductAddedByAdmin();
         }
 
 

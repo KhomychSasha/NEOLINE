@@ -52,48 +52,48 @@ namespace DAL
             {
                 prod = shop.Products.Where(c => c.ProductName == prod.ProductName).Single();
 
-                prod.Price = prod.Price;
+                prod.Price = product.Price;
                 shop.SaveChanges();
             }
         }
 
-        public void UpdateAmount(string nameProduct, int amountProduct)
+        public void UpdateAmount(Product product)
         {
-            Product product = null;
+            Product prod = null;
 
             using (OnlineShop shop = new OnlineShop())
             {
-                product = shop.Products.Where(c => c.ProductName == nameProduct).Single();
+                prod = shop.Products.Where(c => c.ProductName == product.ProductName).Single();
 
-                product.Amount = amountProduct;
+                prod.Amount = product.Amount;
                 shop.SaveChanges();
             }
         }
 
-        public void UpdateDescription(string nameProduct, string description)
+        public void UpdateDescription(Product product)
         {
-            Product product = null;
+            Product prod = null;
 
             using (OnlineShop shop = new OnlineShop())
             {
-                product = shop.Products.Where(c => c.ProductName == nameProduct).Single();
+                prod = shop.Products.Where(c => c.ProductName == product.ProductName).Single();
 
-                product.Description = description;
+                prod.Description = product.Description;
                 shop.SaveChanges();
             }
         }
 
-        public bool VerificationOnAdmin(string login, string pass)
+        public bool VerificationOnAdmin(User user)
         {
-            User user = null;
+            User US = null;
             bool IsUserExistAdmin = false;
 
             using (OnlineShop shop = new OnlineShop())
             {
-                user = shop.Users.Where(c => c.Login == login && c.Password == pass).Single();
+                US = shop.Users.Where(c => c.Login == user.Login && c.Password == user.Password).Single();
             }
 
-            if (user.IsAdmin == true)
+            if (US.IsAdmin == true)
             {
                 IsUserExistAdmin = true;
             }
@@ -106,19 +106,21 @@ namespace DAL
             return IsUserExistAdmin;
         }
 
-        public bool VerificationOnExistUser(string login, string pass)
+        public bool VerificationOnExistUser(User user)
         {
-            User user = null;
+            User US = null;
             bool IsUserExistUser;
 
             try
             {
                 using (OnlineShop shop = new OnlineShop())
                 {
-                    user = shop.Users.Where(c => c.Login == login && c.Password == pass).Single(); var result = shop.Products.Where(c => c.UserLogin == login);
+                    US = shop.Users.Where(c => c.Login == user.Login && c.Password == user.Password).Single();
                 }
+
                 IsUserExistUser = true;
             }
+
             catch (Exception)
             {
                 IsUserExistUser = false;
@@ -127,13 +129,13 @@ namespace DAL
             return IsUserExistUser;
         }
 
-        public List<Product> UserProduct(string login)
+        public List<Product> UserProduct(Product product)
         {
             List<Product> list = new List<Product>();
 
             using (OnlineShop shop = new OnlineShop())
             {
-                foreach (var i in shop.Products.Where(c => c.UserLogin == login))
+                foreach (var i in shop.Products.Where(c => c.UserLogin == product.UserLogin))
                 {
                     list.Add(i);
                 }
@@ -157,16 +159,16 @@ namespace DAL
             return list;
         }
 
-        public bool VerificationLogin(string login)
+        public bool VerificationLogin(User user)
         {
-            User user = null;
+            User US = null;
             bool LoginVerified;
 
             try
             {
                 using (OnlineShop shop = new OnlineShop())
                 {
-                    user = shop.Users.Where(c => c.Login == login).Single();
+                    US = shop.Users.Where(c => c.Login == user.Login).Single();
                 }
 
                 LoginVerified = true;
@@ -179,16 +181,16 @@ namespace DAL
             return LoginVerified;
         }
 
-        public bool VerificationNickname(string nickname)
+        public bool VerificationNickname(User user)
         {
-            User user = null;
+            User US = null;
             bool NickNameVerified;
 
             try
             {
                 using (OnlineShop shop = new OnlineShop())
                 {
-                    user = shop.Users.Where(c => c.Nickname == nickname).Single();
+                    US = shop.Users.Where(c => c.Nickname == user.Nickname).Single();
                 }
                 NickNameVerified = true;
             }
@@ -200,19 +202,21 @@ namespace DAL
             return NickNameVerified;
         }
 
-        public bool VerificationEmail(string email)
+        public bool VerificationEmail(User user)
         {
-            User user = null;
+            User US = null;
             bool EmailVerified;
 
             try
             {
                 using (OnlineShop shop = new OnlineShop())
                 {
-                    user = shop.Users.Where(c => c.Email == email).Single();
+                    US = shop.Users.Where(c => c.Email == user.Email).Single();
                 }
+
                 EmailVerified = true;
             }
+
             catch (Exception)
             {
                 EmailVerified = false;

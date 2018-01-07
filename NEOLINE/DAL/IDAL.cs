@@ -29,7 +29,7 @@ namespace DAL
 
         void UpdateDescription(Product product);
 
-        List<Product> UserProduct(User user);
+        List<Product> UserProduct(Product user);
 
         List<Product> WarehoseProductAddedByAdmin();
     }
