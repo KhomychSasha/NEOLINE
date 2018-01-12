@@ -140,7 +140,5 @@ namespace BLL
         {
             return dal.WarehoseProductAddedByAdmin();
         }
-
-
     }
 }
