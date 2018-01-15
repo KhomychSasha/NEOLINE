@@ -24,7 +24,7 @@ namespace DAL
 
                 shop.SaveChanges();
             }
-        }
+        } 
 
         public void AddProduct(Product product)
         {
