@@ -17,6 +17,8 @@ namespace WCFForOnlineShopCenter
         public void ChangeUserEmail(string login, string newEmail)
         {
             bll.ChangeUserEmail(login,newEmail);
+
+
         }
 
         public void ChangePass(string login, string pass)
