@@ -46,5 +46,9 @@ namespace WCFForOnlineShopCenter
         void UpdateProductPhoto(string productName, string photo);
 
         void UserUpdateAvatar(string login, string avatar);
+
+        void ChangePass(string login, string pass);
+
+        void ChangeUserEmail(string login, string newEmail);
     }
 }

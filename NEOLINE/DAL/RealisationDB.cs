@@ -298,5 +298,31 @@ namespace DAL
                 shop.SaveChanges(); 
             }
         }
+
+        public void ChangeUserPass(User user)
+        {
+            User us = null;
+
+            using (OnlineShop shop = new OnlineShop())
+            {
+                us = shop.Users.Where(c => c.Login == user.Login).Single();
+
+                us.Password = user.Password;
+                shop.SaveChanges();
+            }
+        }
+
+        public void ChangeUserEmail(User user)
+        {
+            User us = null;
+
+            using (OnlineShop shop = new OnlineShop())
+            {
+                us = shop.Users.Where(c => c.Login == user.Login).Single();
+
+                us.Email = user.Email;
+                shop.SaveChanges();
+            }
+        }
     }
 }

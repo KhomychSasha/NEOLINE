@@ -45,5 +45,9 @@ namespace DAL
 
         void UserUpdateAvatar(User user);
 
+        void ChangeUserPass(User user);
+
+        void ChangeUserEmail(User user);
+
     }
 }

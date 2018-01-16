@@ -44,5 +44,9 @@ namespace BLL
         void UpdateProductPhoto(string productName,string photo);
 
         void UserUpdateAvatar(string login,string avatar);
+
+        void ChangeUserPass(string login,string pass);
+
+        void ChangeUserEmail(string login, string pass);
     }
 }
