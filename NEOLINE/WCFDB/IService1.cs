@@ -50,5 +50,7 @@ namespace WCFForOnlineShopCenter
         void ChangePass(string login, string pass);
 
         void ChangeUserEmail(string login, string newEmail);
+
+        void ChangeUserNickname(string login, string nick);
     }
 }

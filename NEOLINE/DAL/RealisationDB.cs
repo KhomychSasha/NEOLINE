@@ -324,5 +324,18 @@ namespace DAL
                 shop.SaveChanges();
             }
         }
+
+        public void ChangeUserNickname(User user)
+        {
+            User us = null;
+
+            using (OnlineShop shop = new OnlineShop())
+            {
+                us = shop.Users.Where(c => c.Login == user.Login).Single();
+
+                us.Nickname = user.Nickname;
+                shop.SaveChanges();
+            }
+        }
     }
 }

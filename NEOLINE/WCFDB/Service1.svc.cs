@@ -14,11 +14,14 @@ namespace WCFForOnlineShopCenter
     {
         protected RealisationBLL bll = new RealisationBLL();
 
+        public void ChangeUserNickname(string login, string nick)
+        {
+            bll.ChangeUserNickname(login,nick);
+        }
+
         public void ChangeUserEmail(string login, string newEmail)
         {
             bll.ChangeUserEmail(login,newEmail);
-
-
         }
 
         public void ChangePass(string login, string pass)

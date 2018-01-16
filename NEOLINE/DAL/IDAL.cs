@@ -49,5 +49,8 @@ namespace DAL
 
         void ChangeUserEmail(User user);
 
+        void ChangeUserNickname(User user); 
+
+
     }
 }

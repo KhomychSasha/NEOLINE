@@ -48,5 +48,7 @@ namespace BLL
         void ChangeUserPass(string login,string pass);
 
         void ChangeUserEmail(string login, string pass);
+
+        void ChangeUserNickname(string login,string nick);
     }
 }

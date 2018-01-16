@@ -13,6 +13,17 @@ namespace BLL
     {
         public IDAL dal = new RealisationDB();
 
+        public void ChangeUserNickname(string login,string nick)
+        {
+            User user = new User()
+            {
+                Login = login,
+                Nickname = nick
+            };
+
+            dal.ChangeUserNickname(user);
+        }
+
         public void ChangeUserEmail(string login, string newEmail)
         {
             User user = new User()
