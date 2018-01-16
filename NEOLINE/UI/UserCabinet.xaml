@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
         Title="UserCabinet" Height="700" Width="950">
-    <Grid>
+    <!--<Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -37,8 +37,10 @@
             <MenuItem x:Name="BackToMainWindow" Header="Back" FontSize="17" ToolTip="Back to NEOLINE"/>
 
             <MenuItem x:Name="ChangeMenuItem" Header="Change" FontSize="17">
-                <MenuItem x:Name="ChangeNick" Header="Nickname: "/>
-                <MenuItem x:Name="ChangeEmail" Header="Email: "/>
+                <MenuItem x:Name="ChangeNick" Header="Nickname"/>
+                <MenuItem x:Name="ChangeEmail" Header="Email"/>
+                <MenuItem x:Name="ChangePass" Header="Pass"/>
+
             </MenuItem>
 
             <MenuItem x:Name="BTNAddProduct" Header="I want add product" FontSize="17"/>
@@ -47,7 +49,9 @@
 
         <TabControl x:Name="TabControl" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="12">
 
-            <!--User info tabitem-->
+            -->
+    <!--User info tabitem-->
+    <!--
             <TabItem >
                 <TabItem.Header>
 
@@ -89,7 +93,9 @@
             </TabItem>
 
 
-            <!--User products info-->
+            -->
+    <!--User products info-->
+    <!--
             <TabItem>
 
                 <TabItem.Header>
@@ -127,10 +133,44 @@
                     </Grid.ColumnDefinitions>
                     
                     
+                    
+                    
                 </Grid>
             </TabItem>
 
         </TabControl>
 
+    </Grid>-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+
+        <TabControl Grid.Row="1">
+            <TabItem >
+                <TabItem.Header>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Image x:Name="icon_house" Source="Icon/house.png" Height="18" Width="29"/>
+                        <TextBlock Text="Home" FontSize="17"/>
+                    </StackPanel>
+
+                </TabItem.Header>
+
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Image x:Name="icon_prosuct" Source="Icon/product.png" Height="20" Width="30"/>
+
+                        <TextBlock Text=" Products" FontSize="17"/>
+                    </StackPanel>
+
+                </TabItem.Header>
+            </TabItem>
+        </TabControl>
     </Grid>
+
 </Window>

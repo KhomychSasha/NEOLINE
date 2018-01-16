@@ -225,7 +225,7 @@ namespace DAL
             return EmailVerified;
         }
 
-        public string UserNickname(User user)
+        public User UserInfo(User user)
         {
             User us = null;
 
@@ -234,43 +234,7 @@ namespace DAL
                 us = shop.Users.Where(c => c.Login == user.Login).Single();
             }
 
-            return us.Nickname;
-        }
-
-        public string UserEmail(User user)
-        {
-            User us = null;
-
-            using (OnlineShop shop = new OnlineShop())
-            {
-                us = shop.Users.Where(c => c.Login == user.Login).Single();
-            }
-
-            return us.Email;
-        }
-
-        public string UserProducts(User user)
-        {
-            int amountProd;
-
-            using (OnlineShop shop = new OnlineShop())
-            {
-                amountProd = shop.Products.Where(c => c.UserLogin == user.Login).Count();
-            }
-
-            return amountProd.ToString();
-        }
-
-        public string UserAvatar(User user)
-        {
-            User us = null;
-
-            using (OnlineShop shop = new OnlineShop())
-            {
-                us = shop.Users.Where(c => c.Login == user.Login).Single();
-            }
-
-            return us.Avatar;
+            return us;
         }
 
         public void UpdateProductPhoto(Product prod)
@@ -336,6 +300,18 @@ namespace DAL
                 us.Nickname = user.Nickname;
                 shop.SaveChanges();
             }
+        }
+
+        public Product ProductInfo(Product prod)
+        {
+            Product pr = null;
+
+            using (OnlineShop shop = new OnlineShop())
+            {
+                pr = shop.Products.Where(c => c.ProductName == prod.ProductName && c.UserLogin == prod.UserLogin).Single();
+            }
+            
+            return pr;
         }
     }
 }
