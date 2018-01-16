@@ -1,22 +1,18 @@
-﻿using BLL;
-using DAL.Entities;
+﻿using DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace WCFForOnlineShopCenter
-{  
-    [ServiceContract]
-    public interface IService1
+namespace BLL
+{
+    public interface IBLL
     {
         void AddUser(string login, string pass, string nick, string email);
 
         void AddProduct(string productName, string descr, string photo, string login, int AmountOfProduct, int price);
-
+        
         bool VerificationOnAdmin(string login, string pass);
 
         bool VerificationOnExistUser(string login, string pass);
@@ -43,12 +39,14 @@ namespace WCFForOnlineShopCenter
 
         string UserProducts(string login);
 
-        void UpdateProductPhoto(string productName, string photo);
+        string UserAvatar(string login);
 
-        void UserUpdateAvatar(string login, string avatar);
+        void UpdateProductPhoto(string productName,string photo);
 
-        void ChangePass(string login, string pass);
+        void UserUpdateAvatar(string login,string avatar);
 
-        void ChangeUserEmail(string login, string newEmail);
+        void ChangeUserPass(string login,string pass);
+
+        void ChangeUserEmail(string login, string pass);
     }
 }

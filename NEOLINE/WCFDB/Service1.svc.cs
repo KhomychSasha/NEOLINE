@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -10,142 +12,103 @@ namespace WCFForOnlineShopCenter
 {
     public class Service1 : IService1
     {
+        protected RealisationBLL bll = new RealisationBLL();
 
-        public void RegistrationUser(string login, string pass, string nick, string email)
+        public void ChangeUserEmail(string login, string newEmail)
         {
-            using (OnlineShop shop = new OnlineShop())
-            {
-                shop.Users.Add(new User()
-                {
-                    Login = login,
-                    Password = pass,
-                    Nickname = nick,
-                    Email = email
-                });
+            bll.ChangeUserEmail(login,newEmail);
 
-                shop.SaveChanges();
-            }
+
         }
 
-        public void AddProduct(string productName, string descr, string photo,string login)
+        public void ChangePass(string login, string pass)
         {
-            using (OnlineShop shop = new OnlineShop())
-            {
-                shop.Products.Add(new Product()
-                {
-                    ProductName = productName,
-                    Description = descr,
-                    Photo = photo,
-                    UserLogin = login
-                });
+            bll.ChangeUserPass(login,pass);
+        }
 
-                shop.SaveChanges();
-            }
+        public void AddUser(string login, string pass, string nick, string email)
+        {
+            bll.AddUser(login,pass,nick,email);
+        }
+
+        public void AddProduct(string productName, string descr, string photo, string login, int AmountOfProduct, int price)
+        {
+            bll.AddProduct(productName,descr,photo,login,AmountOfProduct,price);
         }
 
         public bool VerificationOnAdmin(string login, string pass)
         {
-            User user = null;
-            bool IsUserExistAdmin = false;
-
-                using (OnlineShop shop = new OnlineShop())
-                {
-                    user = shop.Users.Where(c => c.Login == login && c.Password == pass).Single();
-                }
-
-                if (user.IsAdmin == true)
-                {
-                    IsUserExistAdmin = true;
-                }
-                else
-                {
-                    IsUserExistAdmin = false;
-                }
-            
-
-            return IsUserExistAdmin;
+            return bll.VerificationOnAdmin(login,pass);
         }
 
         public bool VerificationOnExistUser(string login, string pass)
         {
-            User user = null;
-            bool IsUserExistUser;
-
-            try
-            {
-                using (OnlineShop shop = new OnlineShop())
-                {
-                    user = shop.Users.Where(c => c.Login == login && c.Password == pass).Single();
-                }
-                IsUserExistUser = true;
-            }
-            catch (Exception)
-            {
-                IsUserExistUser = false;
-            }
-
-            return IsUserExistUser;
+            return VerificationOnExistUser(login,pass);
         }
 
         public bool VerificationLogin(string login)
         {
-            User user = null;
-            bool LoginVerified;
-            try
-            {
-                using (OnlineShop shop = new OnlineShop())
-                {
-                    user = shop.Users.Where(c => c.Login == login).Single();
-                }
-                LoginVerified = true;
-            }
-            catch (Exception)
-            {
-                LoginVerified = false;
-            }
-
-            return LoginVerified;
+            return VerificationLogin(login);
         }
 
         public bool VerificationNickname(string nickname)
         {
-            User user = null;
-            bool NickNameVerified;
-            try
-            {
-                using (OnlineShop shop = new OnlineShop())
-                {
-                    user = shop.Users.Where(c => c.Nickname == nickname).Single();
-                }
-                NickNameVerified = true;
-            }
-            catch(Exception)
-            {
-                NickNameVerified = false;
-            }
-
-            return NickNameVerified;
+            return VerificationNickname(nickname);
         }
 
         public bool VerificationEmail(string email)
         {
-            User user = null;
-            bool EmailVerified;
+            return VerificationEmail(email);
+        }
 
-            try
-            {
-                using (OnlineShop shop = new OnlineShop())
-                {
-                    user = shop.Users.Where(c => c.Email == email).Single();
-                }
-                EmailVerified = true;
-            }
-            catch (Exception)
-            {
-                EmailVerified = false;
-            }
+        public void UpdateProductPrice(string nameProduct, int price)
+        {
+            bll.UpdateProductPrice(nameProduct,price);
+        }
 
-            return EmailVerified;
+        public void UpdateProductAmount(string nameProduct, int amountProduct)
+        {
+            bll.UpdateProductAmount(nameProduct,amountProduct);
+        }
+
+        public void UpdateProductDescription(string nameProduct, string description)
+        {
+            bll.UpdateProductDescription(nameProduct,description);
+        }
+
+        public List<Product> UserProduct(string login)
+        {
+            return bll.UserProduct(login);
+        }
+
+        public List<Product> WarehoseProductAddedByAdmin()
+        {
+            return bll.WarehoseProductAddedByAdmin();
+        }
+
+        public string UserNickname(string login)
+        {
+            return bll.UserNickname(login);
+        }
+
+        public string UserEmail(string login)
+        {
+            return bll.UserEmail(login);
+        }
+
+        public string UserProducts(string login)
+        {
+            return bll.UserProducts(login);
+        }
+
+        public void UpdateProductPhoto(string productName, string photo)
+        {
+            bll.UpdateProductPhoto(productName, photo);
+        }
+
+        public void UserUpdateAvatar(string login, string avatar)
+        {
+            bll.UserUpdateAvatar(login, avatar);
         }
     }
 }
