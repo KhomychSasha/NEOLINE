@@ -13,12 +13,29 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
         </Grid.RowDefinitions>
+        
+        <Label x:Name="label" Content="NEOLINE" Grid.Row="0" Grid.ColumnSpan="2" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Verdana" FontSize="25"/>
+        <Button x:Name="buttonAboutUs" Content="O nas" Grid.Column="2" Margin="7"/>
+        <Button x:Name="buttonContacts" Content="Contacti" Grid.Column="3" Margin="7"/>
+        <Button x:Name="buttonDiscount" Content="Skidki" Grid.Column="4" Margin="7"/>
+        <Button x:Name="buttonReturn" Content="Vozvrat" Grid.Column="5" Margin="7"/>
+        <Button x:Name="buttonSravnenie" Content="Sravnenie" Grid.Row="1" Grid.Column="4" Margin="7"/>
+        <Button x:Name="buttonReturnZhelania" Content="Zhelania" Grid.Row="1" Grid.Column="5" Margin="7"/>
+        <Button x:Name="buttonReturnKorzina" Content="Korzina" Grid.Row="1" Grid.Column="6" Margin="7"/>
+<!--Panel.ZIndex-->
     </Grid>
 </Window>
