@@ -33,14 +33,6 @@ namespace BLL
 
         List<Product> WarehoseProductAddedByAdmin();
 
-        string UserNickname(string login);
-
-        string UserEmail(string login);
-
-        string UserProducts(string login);
-
-        string UserAvatar(string login);
-
         void UpdateProductPhoto(string productName,string photo);
 
         void UserUpdateAvatar(string login,string avatar);
@@ -50,5 +42,9 @@ namespace BLL
         void ChangeUserEmail(string login, string pass);
 
         void ChangeUserNickname(string login,string nick);
+
+        Product ProductInfo(string productName,string userLogin);
+
+        User UserInfo(string login);
     }
 }

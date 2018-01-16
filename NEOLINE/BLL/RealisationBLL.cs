@@ -13,6 +13,27 @@ namespace BLL
     {
         public IDAL dal = new RealisationDB();
 
+        public User UserInfo(string login)
+        {
+            User us = new User()
+            {
+                Login = login
+            };
+
+            return dal.UserInfo(us);
+        }
+
+        public Product ProductInfo(string productName, string userLogin)
+        {
+            Product pr = new Product()
+            {
+                ProductName = productName,
+                UserLogin = userLogin
+            };
+
+            return dal.ProductInfo(pr);
+        }
+
         public void ChangeUserNickname(string login,string nick)
         {
             User user = new User()
@@ -172,46 +193,6 @@ namespace BLL
         public List<Product> WarehoseProductAddedByAdmin()
         {
             return dal.WarehoseProductAddedByAdmin();
-        }
-
-        public string UserNickname(string login)
-        {
-            User user = new User()
-            {
-                Login = login
-            };
-
-            return dal.UserNickname(user);
-        }
-
-        public string UserEmail(string login)
-        {
-            User user = new User()
-            {
-                Login = login
-            };
-
-            return dal.UserEmail(user);
-        }
-
-        public string UserProducts(string login)
-        {
-            User user = new User()
-            {
-                Login = login
-            };
-
-            return dal.UserProducts(user);
-        }
-
-        public string UserAvatar(string login)
-        {
-            User user = new User()
-            {
-                Login = login
-            };
-
-            return dal.UserAvatar(user);
         }
 
         public void UpdateProductPhoto(string productName, string photo)
