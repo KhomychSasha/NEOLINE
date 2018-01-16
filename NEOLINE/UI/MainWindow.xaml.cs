@@ -23,11 +23,23 @@ namespace UI
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Hello", "Hello", MessageBoxButton.OK);
         }
+
+        //   | private void Up_Click(object sender, RoutedEventArgs e)
+        //    {
+        //        scroll.LineUp();
+        //    }
+
+        //    private void Down_Click(object sender, RoutedEventArgs e)
+        //    {
+        //        scroll.LineDown();
+        //    }
+        //}
     }
 }
