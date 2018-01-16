@@ -37,8 +37,10 @@
             <MenuItem x:Name="BackToMainWindow" Header="Back" FontSize="17" ToolTip="Back to NEOLINE"/>
 
             <MenuItem x:Name="ChangeMenuItem" Header="Change" FontSize="17">
-                <MenuItem x:Name="ChangeNick" Header="Nickname: "/>
-                <MenuItem x:Name="ChangeEmail" Header="Email: "/>
+                <MenuItem x:Name="ChangeNick" Header="Nickname"/>
+                <MenuItem x:Name="ChangeEmail" Header="Email"/>
+                <MenuItem x:Name="ChangePass" Header="Pass"/>
+
             </MenuItem>
 
             <MenuItem x:Name="BTNAddProduct" Header="I want add product" FontSize="17"/>
@@ -129,6 +131,8 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    
+                    
                     
                     
                 </Grid>
