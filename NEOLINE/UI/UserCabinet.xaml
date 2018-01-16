@@ -163,7 +163,7 @@
                 <TabItem.Header>
 
                     <StackPanel Orientation="Horizontal">
-                        <Image x:Name="icon_prosuct" Source="Icon/prosuct.png" Height="20" Width="30"/>
+                        <Image x:Name="icon_prosuct" Source="Icon/product.png" Height="20" Width="30"/>
 
                         <TextBlock Text=" Products" FontSize="17"/>
                     </StackPanel>
