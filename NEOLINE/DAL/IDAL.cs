@@ -23,14 +23,27 @@ namespace DAL
 
         bool VerificationEmail(User user);
 
-        void UpdatePrice(Product product);
+        void UpdateProductPrice(Product product);
 
-        void UpdateAmount(Product product);
+        void UpdateProductAmount(Product product);
 
-        void UpdateDescription(Product product);
+        void UpdateProductDescription(Product product);
 
         List<Product> UserProduct(Product user);
 
         List<Product> WarehoseProductAddedByAdmin();
+
+        string UserNickname(User user);
+
+        string UserEmail(User user);
+
+        string UserProducts(User user);
+
+        string UserAvatar(User user);
+
+        void UpdateProductPhoto(Product prod);
+
+        void UserUpdateAvatar(User user);
+
     }
 }

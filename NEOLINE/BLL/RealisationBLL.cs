@@ -93,7 +93,7 @@ namespace BLL
             return dal.VerificationEmail(user);
         }
 
-        public void UpdatePrice(string nameProduct, int price)
+        public void UpdateProductPrice(string nameProduct, int price)
         {
             Product product = new Product()
             {
@@ -101,10 +101,10 @@ namespace BLL
                 Price = price
             };
 
-            dal.UpdatePrice(product);      
+            dal.UpdateProductPrice(product);      
         }
 
-        public void UpdateAmount(string nameProduct, int amountProduct)
+        public void UpdateProductAmount(string nameProduct, int amountProduct)
         {
             Product product = new Product()
             {
@@ -112,10 +112,10 @@ namespace BLL
                 Amount = amountProduct
             };
 
-            dal.UpdateAmount(product);
+            dal.UpdateProductAmount(product);
         }
 
-        public void UpdateDescription(string nameProduct, string description)
+        public void UpdateProductDescription(string nameProduct, string description)
         {
             Product product = new Product()
             {
@@ -123,7 +123,7 @@ namespace BLL
                 Description = description
             };
 
-            dal.UpdateDescription(product);
+            dal.UpdateProductDescription(product);
         }
 
         public List<Product> UserProduct(string login)
@@ -139,6 +139,68 @@ namespace BLL
         public List<Product> WarehoseProductAddedByAdmin()
         {
             return dal.WarehoseProductAddedByAdmin();
+        }
+
+        public string UserNickname(string login)
+        {
+            User user = new User()
+            {
+                Login = login
+            };
+
+            return dal.UserNickname(user);
+        }
+
+        public string UserEmail(string login)
+        {
+            User user = new User()
+            {
+                Login = login
+            };
+
+            return dal.UserEmail(user);
+        }
+
+        public string UserProducts(string login)
+        {
+            User user = new User()
+            {
+                Login = login
+            };
+
+            return dal.UserProducts(user);
+        }
+
+        public string UserAvatar(string login)
+        {
+            User user = new User()
+            {
+                Login = login
+            };
+
+            return dal.UserAvatar(user);
+        }
+
+        public void UpdateProductPhoto(string productName, string photo)
+        {
+            Product product = new Product()
+            {
+                ProductName = productName,
+                Photo = photo
+            };
+
+            dal.UpdateProductPhoto(product);
+        }
+
+        public void UserUpdateAvatar(string login, string avatar)
+        {
+            User user = new User()
+            {
+                Login = login,
+                Avatar = avatar
+            };
+
+            dal.UserUpdateAvatar(user);
         }
     }
 }

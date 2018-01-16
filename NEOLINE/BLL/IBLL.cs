@@ -23,14 +23,26 @@ namespace BLL
 
         bool VerificationEmail(string email);
 
-        void UpdatePrice(string nameProduct, int price);
+        void UpdateProductPrice(string nameProduct, int price);
 
-        void UpdateAmount(string nameProduct, int amountProduct);
+        void UpdateProductAmount(string nameProduct, int amountProduct);
 
-        void UpdateDescription(string nameProduct, string description);
+        void UpdateProductDescription(string nameProduct, string description);
 
         List<Product> UserProduct(string login);
 
         List<Product> WarehoseProductAddedByAdmin();
+
+        string UserNickname(string login);
+
+        string UserEmail(string login);
+
+        string UserProducts(string login);
+
+        string UserAvatar(string login);
+
+        void UpdateProductPhoto(string productName,string photo);
+
+        void UserUpdateAvatar(string login,string avatar);
     }
 }

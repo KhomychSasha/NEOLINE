@@ -44,7 +44,7 @@ namespace DAL
             }
         }
 
-        public void UpdatePrice(Product product)
+        public void UpdateProductPrice(Product product)
         {
             Product prod = null;
 
@@ -57,7 +57,7 @@ namespace DAL
             }
         }
 
-        public void UpdateAmount(Product product)
+        public void UpdateProductAmount(Product product)
         {
             Product prod = null;
 
@@ -70,7 +70,7 @@ namespace DAL
             }
         }
 
-        public void UpdateDescription(Product product)
+        public void UpdateProductDescription(Product product)
         {
             Product prod = null;
 
@@ -223,6 +223,80 @@ namespace DAL
             }
 
             return EmailVerified;
+        }
+
+        public string UserNickname(User user)
+        {
+            User us = null;
+
+            using (OnlineShop shop = new OnlineShop())
+            {
+                us = shop.Users.Where(c => c.Login == user.Login).Single();
+            }
+
+            return us.Nickname;
+        }
+
+        public string UserEmail(User user)
+        {
+            User us = null;
+
+            using (OnlineShop shop = new OnlineShop())
+            {
+                us = shop.Users.Where(c => c.Login == user.Login).Single();
+            }
+
+            return us.Email;
+        }
+
+        public string UserProducts(User user)
+        {
+            int amountProd;
+
+            using (OnlineShop shop = new OnlineShop())
+            {
+                amountProd = shop.Products.Where(c => c.UserLogin == user.Login).Count();
+            }
+
+            return amountProd.ToString();
+        }
+
+        public string UserAvatar(User user)
+        {
+            User us = null;
+
+            using (OnlineShop shop = new OnlineShop())
+            {
+                us = shop.Users.Where(c => c.Login == user.Login).Single();
+            }
+
+            return us.Avatar;
+        }
+
+        public void UpdateProductPhoto(Product prod)
+        {
+            Product product = null;
+
+            using (OnlineShop shop = new OnlineShop())
+            {
+                product = shop.Products.Where(c => c.ProductName == prod.ProductName).Single();
+
+                product.Price = prod.Price;
+                shop.SaveChanges();
+            }
+        }
+
+        public void UserUpdateAvatar(User user)
+        {
+            User us = null;
+
+            using (OnlineShop shop = new OnlineShop())
+            {
+                us = shop.Users.Where(c => c.Login == user.Login).Single();
+
+                us.Avatar = user.Avatar;
+                shop.SaveChanges(); 
+            }
         }
     }
 }

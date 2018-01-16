@@ -28,5 +28,7 @@ namespace DAL.Entities
         public virtual ICollection<Product> Products { get; set; }
 
         public bool IsAdmin { get; set; }
+
+        public string Avatar { get; set; }
     }
 }

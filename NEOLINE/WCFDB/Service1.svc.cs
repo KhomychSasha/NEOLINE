@@ -49,19 +49,19 @@ namespace WCFForOnlineShopCenter
             return VerificationEmail(email);
         }
 
-        public void UpdatePrice(string nameProduct, int price)
+        public void UpdateProductPrice(string nameProduct, int price)
         {
-            bll.UpdatePrice(nameProduct,price);
+            bll.UpdateProductPrice(nameProduct,price);
         }
 
-        public void UpdateAmount(string nameProduct, int amountProduct)
+        public void UpdateProductAmount(string nameProduct, int amountProduct)
         {
-            bll.UpdateAmount(nameProduct,amountProduct);
+            bll.UpdateProductAmount(nameProduct,amountProduct);
         }
 
-        public void UpdateDescription(string nameProduct, string description)
+        public void UpdateProductDescription(string nameProduct, string description)
         {
-            bll.UpdateDescription(nameProduct,description);
+            bll.UpdateProductDescription(nameProduct,description);
         }
 
         public List<Product> UserProduct(string login)
@@ -72,6 +72,31 @@ namespace WCFForOnlineShopCenter
         public List<Product> WarehoseProductAddedByAdmin()
         {
             return bll.WarehoseProductAddedByAdmin();
+        }
+
+        public string UserNickname(string login)
+        {
+            return bll.UserNickname(login);
+        }
+
+        public string UserEmail(string login)
+        {
+            return bll.UserEmail(login);
+        }
+
+        public string UserProducts(string login)
+        {
+            return bll.UserProducts(login);
+        }
+
+        public void UpdateProductPhoto(string productName, string photo)
+        {
+            bll.UpdateProductPhoto(productName, photo);
+        }
+
+        public void UserUpdateAvatar(string login, string avatar)
+        {
+            bll.UserUpdateAvatar(login, avatar);
         }
     }
 }
