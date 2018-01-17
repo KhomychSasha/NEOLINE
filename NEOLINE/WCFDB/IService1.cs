@@ -37,12 +37,6 @@ namespace WCFForOnlineShopCenter
 
         List<Product> WarehoseProductAddedByAdmin();
 
-        string UserNickname(string login);
-
-        string UserEmail(string login);
-
-        string UserProducts(string login);
-
         void UpdateProductPhoto(string productName, string photo);
 
         void UserUpdateAvatar(string login, string avatar);

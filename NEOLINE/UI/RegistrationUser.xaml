@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="UI.RegistrationUser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="500">
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="LBLLogin" Grid.Row="1" FontSize="17" Margin="3" Content="Login" HorizontalContentAlignment="Center"/>
+        <Label x:Name="LBLPass" Grid.Row="2" FontSize="17" Margin="3" Content="Password" HorizontalContentAlignment="Center"/>
+        <Label x:Name="LBLNickname" Grid.Row="3" FontSize="17" Margin="3" Content="Nickname" HorizontalContentAlignment="Center"/>
+        <Label x:Name="LBLEmail" Grid.Row="4" FontSize="17" Margin="3" Content="Email" HorizontalContentAlignment="Center" ToolTip="Email that you will use to contact us"/>
+        <Label x:Name="LBLAvatar" Grid.Row="5" FontSize="17" Margin="3" Content="Avatar" HorizontalContentAlignment="Center"/>
+
+        <TextBox x:Name="TBLogin" Grid.Column="1" FontSize="17" Grid.Row="1" Margin="3"/>
+        <PasswordBox x:Name="PBPass" Grid.Column="1" FontSize="17" Grid.Row="2" Margin="3"/>
+        <TextBox x:Name="TBNickname" Grid.Column="1" FontSize="17" Grid.Row="3" Margin="3"/>
+        <TextBox x:Name="TBEmail" Grid.Column="1" Grid.Row="4" FontSize="17" Margin="3"/>
+        <Image Grid.Column="1" ToolTip="Click to add an avatar" Grid.Row="5" Margin="3"/>
+
+        <Button x:Name="BTNSignup" Grid.Row="6" Margin="7" Content="Sign up" FontSize="17" Click="ClickBTNSignup"  />
+    </Grid>
+</UserControl>

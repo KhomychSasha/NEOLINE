@@ -73,9 +73,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LoginUser.xaml.cs">
+      <DependentUpon>LoginUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationUser.xaml.cs">
+      <DependentUpon>RegistrationUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserCabinet.xaml.cs">
       <DependentUpon>UserCabinet.xaml</DependentUpon>
     </Compile>
+    <Page Include="LoginUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Compile Include="UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
@@ -91,6 +101,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="RegistrationUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserCabinet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -141,6 +155,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icon\terezu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
