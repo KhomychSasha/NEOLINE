@@ -225,13 +225,13 @@ namespace DAL
             return EmailVerified;
         }
 
-        public User UserInfo(User user)
+        public User UserInfo(string login)
         {
             User us = null;
 
             using (OnlineShop shop = new OnlineShop())
             {
-                us = shop.Users.Where(c => c.Login == user.Login).Single();
+                us = shop.Users.Where(c => c.Login == login).Single();
             }
 
             return us;

@@ -14,9 +14,9 @@ namespace WCFForOnlineShopCenter
     {
         protected RealisationBLL bll = new RealisationBLL();
 
-        public User UserInfo(string login)
+        public DTOUser UserInfo(User user,string login)
         {
-            return bll.UserInfo(login);
+            return bll.UsInfo(user,login);
         }
 
         public Product ProductInfo(string productName, string userLogin)

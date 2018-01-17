@@ -9,18 +9,49 @@ using DAL;
 
 namespace BLL
 {
+    
+    public class DTOUser
+    {
+        public int DTOId { get; set; }
+
+        public string DTOLogin { get; set; }
+
+        public string DTOPassword { get; set; }
+
+        public string DTONickname { get; set; }
+
+        public string DTOEmail { get; set; }
+
+        public ICollection<Product> DTOProducts { get; set; }
+
+        public bool DTOIsAdmin  { get; set; }
+        
+        public string DTOAvatar { get; set; }
+    }
+
+
+
     public class RealisationBLL : IBLL
     {
         public IDAL dal = new RealisationDB();
 
-        public User UserInfo(string login)
+        public DTOUser UsInfo(User user,string login)
         {
-            User us = new User()
+            user = dal.UserInfo(login);
+
+            DTOUser us = new DTOUser()
             {
-                Login = login
+                DTOId = user.Id,
+                DTOLogin = user.Login,
+                DTOPassword = user.Password,
+                DTONickname = user.Nickname,
+                DTOEmail = user.Email,
+                DTOAvatar = user.Avatar,
+                DTOIsAdmin = user.IsAdmin,
+                DTOProducts = user.Products
             };
 
-            return dal.UserInfo(us);
+            return us;
         }
 
         public Product ProductInfo(string productName, string userLogin)

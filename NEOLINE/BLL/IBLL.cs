@@ -45,6 +45,6 @@ namespace BLL
 
         Product ProductInfo(string productName,string userLogin);
 
-        User UserInfo(string login);
+        DTOUser UsInfo(User user, string login);
     }
 }
