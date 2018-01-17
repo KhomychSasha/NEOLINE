@@ -99,21 +99,6 @@ namespace WCFForOnlineShopCenter
             return bll.WarehoseProductAddedByAdmin();
         }
 
-        public string UserNickname(string login)
-        {
-            return bll.UserNickname(login);
-        }
-
-        public string UserEmail(string login)
-        {
-            return bll.UserEmail(login);
-        }
-
-        public string UserProducts(string login)
-        {
-            return bll.UserProducts(login);
-        }
-
         public void UpdateProductPhoto(string productName, string photo)
         {
             bll.UpdateProductPhoto(productName, photo);
