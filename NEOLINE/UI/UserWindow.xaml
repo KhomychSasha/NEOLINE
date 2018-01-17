@@ -17,7 +17,7 @@
                 <TabItem.Header>
 
                     <StackPanel Orientation="Horizontal">
-                        <Image x:Name="icon_house" Source="Icon/house.png" Height="18" Width="29"/>
+                        <!--<Image x:Name="icon_house" Source="Icon/house.png" Height="18" Width="29"/>-->
                         <TextBlock Text="Home" FontSize="17"/>
                     </StackPanel>
 
@@ -28,7 +28,7 @@
                 <TabItem.Header>
 
                     <StackPanel Orientation="Horizontal">
-                        <Image x:Name="icon_prosuct" Source="Icon/product.png" Height="20" Width="30"/>
+                        <!--<Image x:Name="icon_prosuct" Source="Icon/product.png" Height="20" Width="30"/>-->
 
                         <TextBlock Text=" Products" FontSize="17"/>
                     </StackPanel>

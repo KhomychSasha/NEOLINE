@@ -22,12 +22,7 @@ namespace UI
     {
         public MainWindow()
         {
-            InitializeComponent();
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Hello", "Hello", MessageBoxButton.OK);
+            
         }
     }
 }
