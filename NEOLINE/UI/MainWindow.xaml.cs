@@ -23,13 +23,69 @@ namespace UI
         public MainWindow()
         {
             InitializeComponent();
-            
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Hello", "Hello", MessageBoxButton.OK);
         }
+
+        private void AnswersAndQuestions_MouseEnter(object sender, MouseEventArgs e)
+        {
+            labelAnwersAndQuestions.Foreground = new SolidColorBrush(Colors.Red);
+        }
+
+        private void Credits_MouseEnter(object sender, MouseEventArgs e)
+        {
+            labelCredits.Foreground = new SolidColorBrush(Colors.Red);
+        }
+
+        private void DeliveryAndPayment_MouseEnter(object sender, MouseEventArgs e)
+        {
+            labelDeliveryAndPayment.Foreground = new SolidColorBrush(Colors.Red);
+        }
+
+        private void Guarantee_MouseEnter(object sender, MouseEventArgs e)
+        {
+            labelGuarantee.Foreground = new SolidColorBrush(Colors.Red);
+        }
+
+        private void Contacts_MouseEnter(object sender, MouseEventArgs e)
+        {
+            labelContacts.Foreground = new SolidColorBrush(Colors.Red);
+        }
+
+        private void SellOnNEOLINE_MouseEnter(object sender, MouseEventArgs e)
+        {
+            labelSellOnNEOLINE.Foreground = new SolidColorBrush(Colors.Red);
+        }
+
+        private void AnswersAndQuestions_MouseLeave(object sender, MouseEventArgs e)
+        {
+            labelAnwersAndQuestions.Foreground = new SolidColorBrush(Colors.Black);
+        }
+        private void Credits_MouseLeave(object sender, MouseEventArgs e)
+        {
+            labelCredits.Foreground = new SolidColorBrush(Colors.Black);
+        }
+        private void DeliveryAndPayment_MouseLeave(object sender, MouseEventArgs e)
+        {
+            labelDeliveryAndPayment.Foreground = new SolidColorBrush(Colors.Black);
+        }
+        private void Guarantee_MouseLeave(object sender, MouseEventArgs e)
+        {
+            labelGuarantee.Foreground = new SolidColorBrush(Colors.Black);
+        }
+        private void Contacts_MouseLeave(object sender, MouseEventArgs e)
+        {
+            labelContacts.Foreground = new SolidColorBrush(Colors.Black);
+        }
+        private void SellOnNEOLINE_MouseLeave(object sender, MouseEventArgs e)
+        {
+            labelSellOnNEOLINE.Foreground = new SolidColorBrush(Colors.Black);
+        }
+
+ 
 
         //   | private void Up_Click(object sender, RoutedEventArgs e)
         //    {
