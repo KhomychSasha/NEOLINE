@@ -33,7 +33,7 @@ namespace DAL
 
         List<Product> WarehoseProductAddedByAdmin();
 
-        User UserInfo(User user);
+        User UserInfo(string login);
 
         void UpdateProductPhoto(Product prod);
 
@@ -45,6 +45,6 @@ namespace DAL
 
         void ChangeUserNickname(User user);
 
-        Product ProductInfo(Product prod);
+        Product ProductInfo(string prodName, string userLogin);
     }
 }

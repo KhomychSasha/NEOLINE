@@ -225,13 +225,13 @@ namespace DAL
             return EmailVerified;
         }
 
-        public User UserInfo(User user)
+        public User UserInfo(string login)
         {
             User us = null;
 
             using (OnlineShop shop = new OnlineShop())
             {
-                us = shop.Users.Where(c => c.Login == user.Login).Single();
+                us = shop.Users.Where(c => c.Login == login).Single();
             }
 
             return us;
@@ -302,13 +302,13 @@ namespace DAL
             }
         }
 
-        public Product ProductInfo(Product prod)
+        public Product ProductInfo(string prodName,string userLogin)
         {
             Product pr = null;
 
             using (OnlineShop shop = new OnlineShop())
             {
-                pr = shop.Products.Where(c => c.ProductName == prod.ProductName && c.UserLogin == prod.UserLogin).Single();
+                pr = shop.Products.Where(c => c.ProductName == prodName && c.UserLogin == userLogin).Single();
             }
             
             return pr;

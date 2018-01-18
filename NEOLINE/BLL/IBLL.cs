@@ -43,8 +43,8 @@ namespace BLL
 
         void ChangeUserNickname(string login,string nick);
 
-        Product ProductInfo(string productName,string userLogin);
+        DTOProduct ProdInfo(string productName,string userLogin);
 
-        User UserInfo(string login);
+        DTOUser UsInfo(string login);
     }
 }
