@@ -7,70 +7,85 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1550" WindowState="Maximized">
     <Grid>
+        
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="509*"/>
+            <ColumnDefinition Width="1035*"/>
         </Grid.ColumnDefinitions>
-      
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-
         </Grid.RowDefinitions>
-        <Grid Grid.Column="7" Grid.Row="1">
+        <Grid Grid.Column="0" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="42*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="0" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="99*"/>
+                    <ColumnDefinition Width="410*"/>
+                </Grid.ColumnDefinitions>
+                <Viewbox Grid.Column="1" HorizontalAlignment="Center" Margin="14.8,0,16.8,0.2" Width="378">
+                    <Label x:Name="label" FontWeight="Bold" FontFamily="Snap ITC" FontSize="72" Cursor="Hand" >NEOLINE</Label>
+                </Viewbox>
+                <Viewbox Grid.Column="0" HorizontalAlignment="Center" Margin="3,0,6.2,0.2" Width="90">
+                    <Image Grid.RowSpan="2" Grid.Column="0" Grid.Row="0" Source="C:\Users\фкуівц\Source\Repos\NEOLINE\NEOLINE\UI\Icon\nlogoblink.gif"/>
+                </Viewbox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="18*"/>
+                <RowDefinition Height="175*"/>
+            </Grid.RowDefinitions>
+            <Viewbox Grid.Column="0" Grid.Row="0">
+                <Label x:Name="labelAnwersAndQuestions" Content="Answers and Questions" Grid.Row="0" Grid.Column="4" Margin="0,12,0,10" FontWeight="Bold" FontFamily="Palatino Linotype" FontSize="30" HorizontalAlignment="Center" MouseEnter="AnswersAndQuestions_MouseEnter" MouseLeave="AnswersAndQuestions_MouseLeave"/>
+            </Viewbox>
+            <Viewbox Grid.Column="1" Grid.Row="0">
+                <Label x:Name="labelCredits" Content="Credits" Grid.Row="0" Grid.Column="5" Margin="0,12,0,10" FontWeight="Bold" FontFamily="Palatino Linotype" FontSize="30" HorizontalAlignment="Center" MouseEnter="Credits_MouseEnter" MouseLeave="Credits_MouseLeave"/>
+            </Viewbox>
+            <Viewbox Grid.Column="2" Grid.Row="0">
+                <Label x:Name="labelDeliveryAndPayment" Content="Delivery and payment" Grid.Row="0" Grid.Column="6" Margin="0,12,0,10" FontWeight="Bold" FontFamily="Palatino Linotype" FontSize="30" HorizontalAlignment="Center" MouseEnter="DeliveryAndPayment_MouseEnter" MouseLeave="DeliveryAndPayment_MouseLeave"/>
+            </Viewbox>
+            <Viewbox Grid.Column="3" Grid.Row="0">
+                <Label x:Name="labelGuarantee" Content="Guarantee" Grid.Row="0" Grid.Column="7" Margin="0,12,0,10" FontWeight="Bold" FontFamily="Palatino Linotype" FontSize="30" HorizontalAlignment="Center" MouseEnter="Guarantee_MouseEnter" MouseLeave="Guarantee_MouseLeave"/>
+            </Viewbox>
+            <Viewbox Grid.Column="4" Grid.Row="0">
+                <Label x:Name="labelContacts" Content="Contacts" Grid.Row="0" Grid.Column="8" Margin="0,12,0,10" FontWeight="Bold" FontFamily="Palatino Linotype" FontSize="30" HorizontalAlignment="Center" MouseEnter="Contacts_MouseEnter" MouseLeave="Contacts_MouseLeave"/>
+            </Viewbox>
+            <Viewbox Grid.Column="5" Grid.Row="0">
+                <Label x:Name="labelSellOnNEOLINE" Content="Sell on NEOLINE" Grid.Row="0" Grid.Column="9" Margin="0,12,0,10" FontWeight="Bold" FontFamily="Palatino Linotype" FontSize="30" HorizontalAlignment="Center" MouseEnter="SellOnNEOLINE_MouseEnter" MouseLeave="SellOnNEOLINE_MouseLeave"/>
+            </Viewbox>
+            <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="22*"/>
+                    <RowDefinition Height="153*"/>
+                </Grid.RowDefinitions>
+
+                <TextBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" TextWrapping="Wrap" Text="Search" Foreground="#7F000000"  TextDecorations="{x:Null}" FontFamily="Segoe UI Emoji" FontSize="22"/>
+                <Button Grid.Column="5" Margin="30,5,30,5">
+                </Button>
+
+
+            </Grid>
         </Grid>
-        <Label x:Name="label"
-               
-               Grid.Row="0"
-               Grid.Column="1"
-               Grid.ColumnSpan="4"
-               Grid.RowSpan="2"
-               FontWeight="Bold"
-               FontFamily="Snap ITC"
-               FontSize="72"
-               Cursor="Hand" >NEOLINE</Label>
-        <!--<Button x:Name="buttonAboutUs" Content="O nas" Grid.Column="6" Margin="13.6,6,110.2,8" Grid.ColumnSpan="2" Grid.Row="2"/>
-        <Button x:Name="buttonContacts" Content="Contacti" Grid.Column="5" Margin="4,4,10.4,10" Grid.Row="2"/>
-        <Button x:Name="buttonDiscount" Content="Skidki" Grid.Column="7" Margin="4.2,7,10.2,7" Grid.Row="1"/>
-        <Button x:Name="buttonReturn" Content="Vozvrat" Grid.Column="8" Margin="9.8,8,3.6,6" Grid.Row="1"/>
-        <Button x:Name="buttonSravnenie" Content="Sravnenie" Grid.Row="2" Grid.Column="7" Margin="5.2,14,9.2,0"/>
-        <Button x:Name="buttonReturnZhelania" Content="Zhelania" Grid.Row="1" Grid.Column="5" Margin="7"/>
-        <Button x:Name="buttonReturnKorzina" Content="Korzina" Grid.Row="1" Grid.Column="6" Margin="7"/>-->
-        <Image Grid.RowSpan="2" Grid.Column="0" Grid.Row="0" Source="C:\Users\фкуівц\Source\Repos\NEOLINE\NEOLINE\UI\Icon\nlogoblink.gif"/>
-        <Label x:Name="labelAnwersAndQuestions" Content="Answers and Questions" Grid.Row="0" Grid.Column="4" Margin="0,12,0,10" FontWeight="Bold" FontFamily="Palatino Linotype" FontSize="13" HorizontalAlignment="Center" MouseEnter="AnswersAndQuestions_MouseEnter" MouseLeave="AnswersAndQuestions_MouseLeave"/>
-        <Label x:Name="labelCredits" Content="Credits" Grid.Row="0" Grid.Column="5" Margin="0,12,0,10" FontWeight="Bold" FontFamily="Palatino Linotype" FontSize="13" HorizontalAlignment="Center" MouseEnter="Credits_MouseEnter" MouseLeave="Credits_MouseLeave"/>
-        <Label x:Name="labelDeliveryAndPayment" Content="Delivery and payment" Grid.Row="0" Grid.Column="6" Margin="0,12,0,10" FontWeight="Bold" FontFamily="Palatino Linotype" FontSize="13" HorizontalAlignment="Center" MouseEnter="DeliveryAndPayment_MouseEnter" MouseLeave="DeliveryAndPayment_MouseLeave"/>
-        <Label x:Name="labelGuarantee" Content="Guarantee" Grid.Row="0" Grid.Column="7" Margin="0,12,0,10" FontWeight="Bold" FontFamily="Palatino Linotype" FontSize="13" HorizontalAlignment="Center" MouseEnter="Guarantee_MouseEnter" MouseLeave="Guarantee_MouseLeave"/>
-        <Label x:Name="labelContacts" Content="Contacts" Grid.Row="0" Grid.Column="8" Margin="0,12,0,10" FontWeight="Bold" FontFamily="Palatino Linotype" FontSize="13" HorizontalAlignment="Center" MouseEnter="Contacts_MouseEnter" MouseLeave="Contacts_MouseLeave"/>
-        <Label x:Name="labelSellOnNEOLINE" Content="Sell on NEOLINE" Grid.Row="0" Grid.Column="9" Margin="0,12,0,10" FontWeight="Bold" FontFamily="Palatino Linotype" FontSize="13" HorizontalAlignment="Center" MouseEnter="SellOnNEOLINE_MouseEnter" MouseLeave="SellOnNEOLINE_MouseLeave"/>
-        <TextBox Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="4" Margin="0,0,0,0" TextWrapping="Wrap" Text="Search" Foreground="#7F000000"/>
-        <StackPanel Grid.Row="2" Grid.RowSpan="7" Grid.ColumnSpan="2" Background="Black"/>
         <!--Panel.ZIndex-->
-    </Grid>
+            </Grid> 
 </Window>

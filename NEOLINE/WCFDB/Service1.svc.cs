@@ -14,14 +14,14 @@ namespace WCFForOnlineShopCenter
     {
         protected RealisationBLL bll = new RealisationBLL();
 
-        public User UserInfo(string login)
+        public DTOUser UserInfo(string login)
         {
-            return bll.UserInfo(login);
+            return bll.UsInfo(login);
         }
 
-        public Product ProductInfo(string productName, string userLogin)
+        public DTOProduct ProdInfo(string productName, string userLogin)
         {
-            return bll.ProductInfo(productName,userLogin);
+            return bll.ProdInfo(productName,userLogin);
         }
 
         public void ChangeUserNickname(string login, string nick)
