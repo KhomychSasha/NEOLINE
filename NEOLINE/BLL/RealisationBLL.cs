@@ -6,49 +6,69 @@ using System.Threading.Tasks;
 using DAL.Entities;
 using DBNeoline;
 using DAL;
+using System.Runtime.Serialization;
 
 namespace BLL
 {
-    
+    [DataContract]
     public class DTOUser
     {
+        [DataMember]
         public int DTOId { get; set; }
 
+        [DataMember]
         public string DTOLogin { get; set; }
 
+        [DataMember]
         public string DTOPassword { get; set; }
 
+        [DataMember]
         public string DTONickname { get; set; }
 
+        [DataMember]
         public string DTOEmail { get; set; }
 
+        [DataMember]
         public ICollection<Product> DTOProducts { get; set; }
 
+        [DataMember]
         public bool DTOIsAdmin  { get; set; }
-        
+
+        [DataMember]
         public string DTOAvatar { get; set; }
     }
 
+    [DataContract]
     public class DTOProduct
     {
+        [DataMember]
         public int Id { get; set; }
 
+        [DataMember]
         public string ProductName { get; set; }
 
+        [DataMember]
         public string Description { get; set; }
 
+        [DataMember]
         public string Photo { get; set; }
 
+        [DataMember]
         public int Amount { get; set; }
 
+        [DataMember]
         public int Price { get; set; }
 
+        [DataMember]
         public string UserLogin { get; set; }
 
+        [DataMember]
         public virtual User UsersProducts { get; set; }
 
+        [DataMember]
         public string CategoryName { get; set; }
 
+        [DataMember]
         public virtual Category Categories { get; set; }
     }
 

@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace DAL.Entities
 {
-    [DataContract]
     public class User
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
