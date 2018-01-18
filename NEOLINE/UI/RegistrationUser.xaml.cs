@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WinForm = System.Windows.Forms;
+using Microsoft.Win32;
 
 
 namespace UI
@@ -24,6 +26,23 @@ namespace UI
         }
 
         private void ClickBTNSignup(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClickAnAvatar(object sender, MouseButtonEventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+
+            var result = dialog.ShowDialog();
+
+            if (result == true)
+            {
+                MEAvatar.Source = new Uri(dialog.FileName);
+            }
+        }
+
+        private void ClickFinishAnAvatar(object sender, MouseButtonEventArgs e)
         {
 
         }
