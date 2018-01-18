@@ -31,9 +31,18 @@
         
         <PasswordBox x:Name="PBPass" Grid.Column="1" Grid.Row="3" Margin="3" />
 
-        <Button x:Name="BTNLogin" Grid.Column="1" Grid.Row="4" Margin="7" Content="Sign in" FontSize="17"/>
+        <Grid Grid.Column="1" Grid.Row="4">
 
-        <Button x:Name="BTNRegistration" Grid.Row="4" Margin="7" Content="Sign up" FontSize="17"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Button x:Name="BTNRegistration" Grid.Row="4" Margin="7" Content="Sign up" FontSize="17"/>
 
+            <Button x:Name="BTNLogin" Grid.Column="1" Margin="7" Grid.Row="4" Content="Sign in" FontSize="17"/>
+
+        </Grid>
+        
     </Grid>
 </UserControl>

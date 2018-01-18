@@ -34,8 +34,8 @@
         <PasswordBox x:Name="PBPass" Grid.Column="1" FontSize="17" Grid.Row="2" Margin="3"/>
         <TextBox x:Name="TBNickname" Grid.Column="1" FontSize="17" Grid.Row="3" Margin="3"/>
         <TextBox x:Name="TBEmail" Grid.Column="1" Grid.Row="4" FontSize="17" Margin="3"/>
-        <MediaElement x:Name="MEAvatar" Grid.Column="1" Source="C:\Users\Максим\Source\Repos\NEOLINE\NEOLINE\UI\Icon\default-avatar.jpg" ToolTip="Click to add an avatar" Grid.Row="5" Margin="3" MouseDown="ClickAnAvatar" MouseUp="ClickFinishAnAvatar" Cursor="Hand"/>
+        <MediaElement x:Name="MEAvatar" Grid.Column="1" Source="C:\Users\Xam\Source\Repos\NEOLINE\NEOLINE\UI\Icon\default-avatar.jpg" ToolTip="Click to add an avatar" Grid.Row="5" Margin="3" MouseDown="ClickAnAvatar" MouseUp="ClickFinishAnAvatar" Cursor="Hand"/>
 
-        <Button x:Name="BTNSignup" Grid.Row="6" Margin="7" Content="Sign up" FontSize="17" Click="ClickBTNSignup"  />
+        <Button x:Name="BTNSignup" Grid.Row="6" Margin="120,7,0,7" Content="Sign up" FontSize="17" Click="ClickBTNSignup"  />
     </Grid>
 </UserControl>

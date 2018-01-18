@@ -151,9 +151,6 @@
     <Resource Include="Icon\terezu.png" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icon\search.png" />
   </ItemGroup>
   <ItemGroup>

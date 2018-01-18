@@ -25,6 +25,8 @@ namespace UI
             InitializeComponent();
         }
 
+        protected Uri FileNameAvatar = null;
+         
         private void ClickBTNSignup(object sender, RoutedEventArgs e)
         {
 
@@ -38,8 +40,10 @@ namespace UI
 
             if (result == true)
             {
-                MEAvatar.Source = new Uri(dialog.FileName);
+                FileNameAvatar = new Uri(dialog.FileName);
             }
+
+            MEAvatar.Source = FileNameAvatar; 
         }
 
         private void ClickFinishAnAvatar(object sender, MouseButtonEventArgs e)
