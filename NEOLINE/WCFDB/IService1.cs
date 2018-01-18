@@ -65,9 +65,9 @@ namespace WCFForOnlineShopCenter
         void ChangeUserNickname(string login, string nick);
 
         [OperationContract]
-        DTOUser UserInfo(User user, string login);
+        DTOUser UserInfo(string login);
 
         [OperationContract]
-        Product ProductInfo(string productName, string userLogin);
+        DTOProduct ProdInfo(string productName, string userLogin);
     }
 }

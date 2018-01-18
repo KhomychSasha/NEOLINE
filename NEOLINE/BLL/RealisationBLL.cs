@@ -29,15 +29,38 @@ namespace BLL
         public string DTOAvatar { get; set; }
     }
 
+    public class DTOProduct
+    {
+        public int Id { get; set; }
+
+        public string ProductName { get; set; }
+
+        public string Description { get; set; }
+
+        public string Photo { get; set; }
+
+        public int Amount { get; set; }
+
+        public int Price { get; set; }
+
+        public string UserLogin { get; set; }
+
+        public virtual User UsersProducts { get; set; }
+
+        public string CategoryName { get; set; }
+
+        public virtual Category Categories { get; set; }
+    }
+
 
 
     public class RealisationBLL : IBLL
     {
         public IDAL dal = new RealisationDB();
 
-        public DTOUser UsInfo(User user,string login)
+        public DTOUser UsInfo(string login)
         {
-            user = dal.UserInfo(login);
+            User user = dal.UserInfo(login);
 
             DTOUser us = new DTOUser()
             {
@@ -54,15 +77,25 @@ namespace BLL
             return us;
         }
 
-        public Product ProductInfo(string productName, string userLogin)
+        public DTOProduct ProdInfo(string productName, string userLogin)
         {
-            Product pr = new Product()
+            Product prod = dal.ProductInfo(productName,userLogin);
+
+            DTOProduct product = new DTOProduct()
             {
-                ProductName = productName,
-                UserLogin = userLogin
+                Id = prod.Id,
+                ProductName = prod.ProductName,
+                Description = prod.Description,
+                Amount = prod.Amount,
+                CategoryName = prod.CategoryName,
+                Categories = prod.Categories,
+                Photo = prod.Photo,
+                Price = prod.Price,
+                UserLogin = prod.UserLogin,
+                UsersProducts = prod.UsersProducts
             };
 
-            return dal.ProductInfo(pr);
+            return product;
         }
 
         public void ChangeUserNickname(string login,string nick)

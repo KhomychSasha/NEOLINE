@@ -302,13 +302,13 @@ namespace DAL
             }
         }
 
-        public Product ProductInfo(Product prod)
+        public Product ProductInfo(string prodName,string userLogin)
         {
             Product pr = null;
 
             using (OnlineShop shop = new OnlineShop())
             {
-                pr = shop.Products.Where(c => c.ProductName == prod.ProductName && c.UserLogin == prod.UserLogin).Single();
+                pr = shop.Products.Where(c => c.ProductName == prodName && c.UserLogin == userLogin).Single();
             }
             
             return pr;
