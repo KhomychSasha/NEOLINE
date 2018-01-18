@@ -5,13 +5,22 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:UI"
              mc:Ignorable="d" 
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}"
              d:DesignHeight="600" d:DesignWidth="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
-
+        <Grid x:Name="___No_Name_">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="User cabinet" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="36" FontFamily="Arial" Margin="40,0,0,0"/>
+            <Label x:Name="LabelExit" Grid.Column="1" Content="Exit" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" MouseEnter="LabelExit_MouseEnter" MouseLeave="LabelExit_MouseLeave"/>
+        </Grid>
         <TabControl Grid.Row="1">
             <TabItem >
                 <TabItem.Header>

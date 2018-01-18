@@ -30,7 +30,7 @@
                     <Label x:Name="label" FontWeight="Bold" FontFamily="Snap ITC" FontSize="72" Cursor="Hand" >NEOLINE</Label>
                 </Viewbox>
                 <Viewbox Grid.Column="0" HorizontalAlignment="Center" Margin="3,0,6.2,0.2" Width="90">
-                    <Image Grid.RowSpan="2" Grid.Column="0" Grid.Row="0" Source="C:\Users\фкуівц\Source\Repos\NEOLINE\NEOLINE\UI\Icon\nlogoblink.gif"/>
+                    <Image Grid.RowSpan="2" Grid.Column="0" Grid.Row="0" Source="Icon/NeoLogo.jpg"/>
                 </Viewbox>
             </Grid>
         </Grid>
