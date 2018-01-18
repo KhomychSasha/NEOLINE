@@ -156,5 +156,11 @@
   <ItemGroup>
     <Resource Include="Icon\default-avatar.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\search-logo-hi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\Neo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

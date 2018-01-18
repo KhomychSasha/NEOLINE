@@ -5,36 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1550" WindowState="Maximized">
+        Title="MainWindow" Height="800" Width="1550" WindowState="Maximized" MinWidth="1550" MinHeight="800">
     <Grid>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="509*"/>
             <ColumnDefinition Width="1035*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="97*"/>
+            <RowDefinition Height="674*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Column="0" Grid.Row="0">
+        <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,1035,349.4" Grid.RowSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="13*"/>
                 <RowDefinition Height="42*"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Column="0" Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="99*"/>
-                    <ColumnDefinition Width="410*"/>
-                </Grid.ColumnDefinitions>
-                <Viewbox Grid.Column="1" HorizontalAlignment="Center" Margin="14.8,0,16.8,0.2" Width="378">
-                    <Label x:Name="label" FontWeight="Bold" FontFamily="Snap ITC" FontSize="72" Cursor="Hand" >NEOLINE</Label>
-                </Viewbox>
-                <Viewbox Grid.Column="0" HorizontalAlignment="Center" Margin="3,0,6.2,0.2" Width="90">
-                    <Image Grid.RowSpan="2" Grid.Column="0" Grid.Row="0" Source="Icon/NeoLogo.jpg"/>
-                </Viewbox>
-            </Grid>
+            <Viewbox Grid.Row="0" HorizontalAlignment="Left">
+                <Label x:Name="label" FontWeight="Bold" FontFamily="Stencil" FontSize="250" Cursor="Hand" >N E O L I N E</Label>
+            </Viewbox>
         </Grid>
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="1" Margin="0.2,0,0,349.4" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -80,12 +71,13 @@
                 </Grid.RowDefinitions>
 
                 <TextBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" TextWrapping="Wrap" Text="Search" Foreground="#7F000000"  TextDecorations="{x:Null}" FontFamily="Segoe UI Emoji" FontSize="22"/>
-                <Button Grid.Column="5" Margin="30,5,30,5">
+                <Button Grid.Column="5" Margin="5,5,55,5">
+                    <Image Source="C:\Users\фкуівц\source\repos\NEOLINE\NEOLINE\UI\Icon\search-logo-hi.png"/>
                 </Button>
 
 
             </Grid>
         </Grid>
         <!--Panel.ZIndex-->
-            </Grid> 
+    </Grid>
 </Window>
