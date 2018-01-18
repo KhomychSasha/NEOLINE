@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1550" WindowState="Maximized">
     <Grid>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="509*"/>
             <ColumnDefinition Width="1035*"/>
@@ -62,7 +63,7 @@
                 <Label x:Name="labelContacts" Content="Contacts" Grid.Row="0" Grid.Column="8" Margin="0,12,0,10" FontWeight="Bold" FontFamily="Palatino Linotype" FontSize="30" HorizontalAlignment="Center" MouseEnter="Contacts_MouseEnter" MouseLeave="Contacts_MouseLeave"/>
             </Viewbox>
             <Viewbox Grid.Column="5" Grid.Row="0">
-                <Label x:Name="labelSellOnNEOLINE" Content="Sell on NEOLINE" Grid.Row="0" Grid.Column="9" Margin="0,12,0,10" FontWeight="Bold" FontFamily="Palatino Linotype" FontSize="" HorizontalAlignment="Center" MouseEnter="SellOnNEOLINE_MouseEnter" MouseLeave="SellOnNEOLINE_MouseLeave"/>
+                <Label x:Name="labelSellOnNEOLINE" Content="Sell on NEOLINE" Grid.Row="0" Grid.Column="9" Margin="0,12,0,10" FontWeight="Bold" FontFamily="Palatino Linotype" FontSize="30" HorizontalAlignment="Center" MouseEnter="SellOnNEOLINE_MouseEnter" MouseLeave="SellOnNEOLINE_MouseLeave"/>
             </Viewbox>
             <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4">
                 <Grid.ColumnDefinitions>
@@ -85,21 +86,6 @@
 
             </Grid>
         </Grid>
-        <!--<Button x:Name="buttonAboutUs" Content="O nas" Grid.Column="6" Margin="13.6,6,110.2,8" Grid.ColumnSpan="2" Grid.Row="2"/>
-        <Button x:Name="buttonContacts" Content="Contacti" Grid.Column="5" Margin="4,4,10.4,10" Grid.Row="2"/>
-        <Button x:Name="buttonDiscount" Content="Skidki" Grid.Column="7" Margin="4.2,7,10.2,7" Grid.Row="1"/>
-        <Button x:Name="buttonReturn" Content="Vozvrat" Grid.Column="8" Margin="9.8,8,3.6,6" Grid.Row="1"/>
-        <Button x:Name="buttonSravnenie" Content="Sravnenie" Grid.Row="2" Grid.Column="7" Margin="5.2,14,9.2,0"/>
-        <Button x:Name="buttonReturnZhelania" Content="Zhelania" Grid.Row="1" Grid.Column="5" Margin="7"/>
-        <Button x:Name="buttonReturnKorzina" Content="Korzina" Grid.Row="1" Grid.Column="6" Margin="7"/>-->
-
-
-
-
-
-
-
-        <!--<StackPanel Grid.Row="2" Grid.RowSpan="7" Grid.ColumnSpan="2" Background="Black"/>-->
         <!--Panel.ZIndex-->
-    </Grid>
+            </Grid> 
 </Window>
