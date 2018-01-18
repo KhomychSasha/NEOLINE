@@ -24,5 +24,15 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void LabelExit_MouseEnter(object sender, MouseEventArgs e)
+        {
+            LabelExit.Foreground = new SolidColorBrush(Colors.Red);
+        }
+
+        private void LabelExit_MouseLeave(object sender, MouseEventArgs e)
+        {
+            LabelExit.Foreground = new SolidColorBrush(Colors.Black);
+        }
     }
 }

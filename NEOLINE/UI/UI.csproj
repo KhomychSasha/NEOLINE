@@ -80,9 +80,6 @@
     <Compile Include="RegistrationUser.xaml.cs">
       <DependentUpon>RegistrationUser.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserCabinet.xaml.cs">
-      <DependentUpon>UserCabinet.xaml</DependentUpon>
-    </Compile>
     <Page Include="LoginUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -103,10 +100,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RegistrationUser.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserCabinet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -156,9 +149,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icon\terezu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icon\search.png" />

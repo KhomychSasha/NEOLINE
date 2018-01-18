@@ -14,7 +14,7 @@ namespace DBNeoline
         public OnlineShop()
             : base("name=OnlineShop")
         {
-            Database.SetInitializer<OnlineShop>(new MyInitializer<OnlineShop>());
+            //Database.SetInitializer<OnlineShop>(new MyInitializer<OnlineShop>());
         }
 
         public virtual DbSet<User> Users { get; set; }
