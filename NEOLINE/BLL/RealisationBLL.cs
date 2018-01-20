@@ -42,34 +42,34 @@ namespace BLL
     public class DTOProduct
     {
         [DataMember]
-        public int Id { get; set; }
+        public int DTOId { get; set; }
 
         [DataMember]
-        public string ProductName { get; set; }
+        public string DTOProductName { get; set; }
 
         [DataMember]
-        public string Description { get; set; }
+        public string DTODescription { get; set; }
 
         [DataMember]
-        public string Photo { get; set; }
+        public string DTOPhoto { get; set; }
 
         [DataMember]
-        public int Amount { get; set; }
+        public int DTOAmount { get; set; }
 
         [DataMember]
-        public int Price { get; set; }
+        public int DTOPrice { get; set; }
 
         [DataMember]
-        public string UserLogin { get; set; }
+        public string DTOUserLogin { get; set; }
 
         [DataMember]
-        public virtual User UsersProducts { get; set; }
+        public virtual User DTOUsersProducts { get; set; }
 
         [DataMember]
-        public string CategoryName { get; set; }
+        public string DTOCategoryName { get; set; }
 
         [DataMember]
-        public virtual Category Categories { get; set; }
+        public virtual Category DTOCategories { get; set; }
     }
 
 
@@ -103,16 +103,16 @@ namespace BLL
 
             DTOProduct product = new DTOProduct()
             {
-                Id = prod.Id,
-                ProductName = prod.ProductName,
-                Description = prod.Description,
-                Amount = prod.Amount,
-                CategoryName = prod.CategoryName,
-                Categories = prod.Categories,
-                Photo = prod.Photo,
-                Price = prod.Price,
-                UserLogin = prod.UserLogin,
-                UsersProducts = prod.UsersProducts
+                DTOId = prod.Id,
+                DTOProductName = prod.ProductName,
+                DTODescription = prod.Description,
+                DTOAmount = prod.Amount,
+                DTOCategoryName = prod.CategoryName,
+                DTOCategories = prod.Categories,
+                DTOPhoto = prod.Photo,
+                DTOPrice = prod.Price,
+                DTOUserLogin = prod.UserLogin,
+                DTOUsersProducts = prod.UsersProducts
             };
 
             return product;
