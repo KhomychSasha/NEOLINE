@@ -12,7 +12,7 @@ namespace WCFForOnlineShopCenter
 {
     public class Service1 : IService1
     {
-        protected RealisationBLL bll = new RealisationBLL();
+        public RealisationBLL bll = new RealisationBLL();
 
         public void ChangeUserEmail(string login, string newEmail)
         {
