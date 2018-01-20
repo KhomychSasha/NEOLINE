@@ -45,6 +45,6 @@ namespace DAL
 
         void ChangeUserNickname(User user);
 
-        Product ProductInfo(string prodName, string userLogin);
+        Product ProductInfo(string prodName, int userID);
     }
 }
