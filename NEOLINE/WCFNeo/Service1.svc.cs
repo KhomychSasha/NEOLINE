@@ -7,6 +7,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Windows.Media.Imaging;
 
 namespace WCFNeo
 {
@@ -17,7 +18,7 @@ namespace WCFNeo
         void AddUser(string login, string pass, string nick, string email);
 
         [OperationContract]
-        void AddProduct(string productName, string descr, string photo, string login, int AmountOfProduct, int price);
+        void AddProduct(string productName, string descr, BitmapImage photo, int userID, int AmountOfProduct, int price);
 
         [OperationContract]
         bool VerificationOnAdmin(string login, string pass);
@@ -44,16 +45,16 @@ namespace WCFNeo
         void UpdateProductDescription(string nameProduct, string description);
 
         [OperationContract]
-        List<Product> UserProduct(string login);
+        List<Product> UserProduct(int ID);
 
         [OperationContract]
         List<Product> WarehoseProductAddedByAdmin();
 
         [OperationContract]
-        void UpdateProductPhoto(string productName, string photo);
+        void UpdateProductPhoto(string productName, BitmapImage photo);
 
         [OperationContract]
-        void UserUpdateAvatar(string login, string avatar);
+        void UserUpdateAvatar(string login, BitmapImage avatar);
 
         [OperationContract]
         void ChangePass(string login, string pass);
@@ -68,6 +69,6 @@ namespace WCFNeo
         DTOUser UserInfo(string login);
 
         [OperationContract]
-        DTOProduct ProdInfo(string productName, string userLogin);
+        DTOProduct ProdInfo(string productName, int userID);
     }
 }

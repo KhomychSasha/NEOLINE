@@ -7,6 +7,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Windows.Media.Imaging;
 
 namespace WCFNeo
 {
@@ -19,9 +20,9 @@ namespace WCFNeo
             return bll.UsInfo(login);
         }
 
-        public DTOProduct ProdInfo(string productName, string userLogin)
+        public DTOProduct ProdInfo(string productName, int userID)
         {
-            return bll.ProdInfo(productName, userLogin);
+            return bll.ProdInfo(productName, userID);
         }
 
         public void ChangeUserNickname(string login, string nick)
@@ -44,9 +45,9 @@ namespace WCFNeo
             bll.AddUser(login, pass, nick, email);
         }
 
-        public void AddProduct(string productName, string descr, string photo, string login, int AmountOfProduct, int price)
+        public void AddProduct(string productName, string descr, BitmapImage photo, int userID, int AmountOfProduct, int price)
         {
-            bll.AddProduct(productName, descr, photo, login, AmountOfProduct, price);
+            bll.AddProduct(productName, descr, photo, userID, AmountOfProduct, price);
         }
 
         public bool VerificationOnAdmin(string login, string pass)
@@ -89,9 +90,9 @@ namespace WCFNeo
             bll.UpdateProductDescription(nameProduct, description);
         }
 
-        public List<Product> UserProduct(string login)
+        public List<Product> UserProduct(int ID)
         {
-            return bll.UserProduct(login);
+            return bll.UserProduct(ID);
         }
 
         public List<Product> WarehoseProductAddedByAdmin()
@@ -99,12 +100,12 @@ namespace WCFNeo
             return bll.WarehoseProductAddedByAdmin();
         }
 
-        public void UpdateProductPhoto(string productName, string photo)
+        public void UpdateProductPhoto(string productName, BitmapImage photo)
         {
             bll.UpdateProductPhoto(productName, photo);
         }
 
-        public void UserUpdateAvatar(string login, string avatar)
+        public void UserUpdateAvatar(string login, BitmapImage avatar)
         {
             bll.UserUpdateAvatar(login, avatar);
         }

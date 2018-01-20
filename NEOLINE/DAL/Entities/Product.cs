@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace DAL.Entities
 {
@@ -20,7 +21,7 @@ namespace DAL.Entities
         [Required]
         public string Description { get; set; }
 
-        public string Photo { get; set; }
+        public BitmapImage Photo { get; set; }
 
         [Required]
         public int Amount { get; set; }

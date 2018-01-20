@@ -7,6 +7,7 @@ using DAL.Entities;
 using DBNeoline;
 using DAL;
 using System.Runtime.Serialization;
+using System.Windows.Media.Imaging;
 
 namespace BLL
 {
@@ -35,7 +36,7 @@ namespace BLL
         public bool DTOIsAdmin  { get; set; }
 
         [DataMember]
-        public string DTOAvatar { get; set; }
+        public BitmapImage DTOAvatar { get; set; }
     }
 
     [DataContract]
@@ -51,7 +52,7 @@ namespace BLL
         public string DTODescription { get; set; }
 
         [DataMember]
-        public string DTOPhoto { get; set; }
+        public BitmapImage DTOPhoto { get; set; }
 
         [DataMember]
         public int DTOAmount { get; set; }
@@ -60,13 +61,13 @@ namespace BLL
         public int DTOPrice { get; set; }
 
         [DataMember]
-        public string DTOUserLogin { get; set; }
+        public int DTOUserID { get; set; }
 
         [DataMember]
         public virtual User DTOUsersProducts { get; set; }
 
         [DataMember]
-        public string DTOCategoryName { get; set; }
+        public int DTOCategoryID { get; set; }
 
         [DataMember]
         public virtual Category DTOCategories { get; set; }
@@ -97,9 +98,9 @@ namespace BLL
             return us;
         }
 
-        public DTOProduct ProdInfo(string productName, string userLogin)
+        public DTOProduct ProdInfo(string productName, int userID)
         {
-            Product prod = dal.ProductInfo(productName,userLogin);
+            Product prod = dal.ProductInfo(productName,userID);
 
             DTOProduct product = new DTOProduct()
             {
@@ -107,12 +108,12 @@ namespace BLL
                 DTOProductName = prod.ProductName,
                 DTODescription = prod.Description,
                 DTOAmount = prod.Amount,
-                DTOCategoryName = prod.CategoryName,
+                DTOCategoryID = prod.CategoryID,
                 DTOCategories = prod.Categories,
                 DTOPhoto = prod.Photo,
                 DTOPrice = prod.Price,
-                DTOUserLogin = prod.UserLogin,
-                DTOUsersProducts = prod.UsersProducts
+                DTOUserID = prod.UserID,
+                DTOUsersProducts = prod.UserIDs
             };
 
             return product;
@@ -164,14 +165,14 @@ namespace BLL
             dal.AddUser(user);
         }
 
-        public void AddProduct(string productName, string descr, string photo, string login, int AmountOfProduct, int price)
+        public void AddProduct(string productName, string descr, BitmapImage photo, int ID, int AmountOfProduct, int price)
         {
             Product product = new Product()
             {
                 ProductName = productName,
                 Description = descr,
                 Photo = photo,
-                UserLogin = login,
+                UserID = ID,
                 Amount = AmountOfProduct,
                 Price = price
             };
@@ -264,11 +265,11 @@ namespace BLL
             dal.UpdateProductDescription(product);
         }
 
-        public List<Product> UserProduct(string login)
+        public List<Product> UserProduct(int ID)
         {
             Product prod = new Product()
             {
-                UserLogin = login
+                UserID = ID
             };
 
             return dal.UserProduct(prod);
@@ -279,7 +280,7 @@ namespace BLL
             return dal.WarehoseProductAddedByAdmin();
         }
 
-        public void UpdateProductPhoto(string productName, string photo)
+        public void UpdateProductPhoto(string productName, BitmapImage photo)
         {
             Product product = new Product()
             {
@@ -290,7 +291,7 @@ namespace BLL
             dal.UpdateProductPhoto(product);
         }
 
-        public void UserUpdateAvatar(string login, string avatar)
+        public void UserUpdateAvatar(string login, BitmapImage avatar)
         {
             User user = new User()
             {

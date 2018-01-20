@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace BLL
 {
@@ -11,7 +12,7 @@ namespace BLL
     {
         void AddUser(string login, string pass, string nick, string email);
 
-        void AddProduct(string productName, string descr, string photo, string login, int AmountOfProduct, int price);
+        void AddProduct(string productName, string descr, BitmapImage photo, int ID, int AmountOfProduct, int price);
         
         bool VerificationOnAdmin(string login, string pass);
 
@@ -29,13 +30,13 @@ namespace BLL
 
         void UpdateProductDescription(string nameProduct, string description);
 
-        List<Product> UserProduct(string login);
+        List<Product> UserProduct(int ID);
 
         List<Product> WarehoseProductAddedByAdmin();
 
-        void UpdateProductPhoto(string productName,string photo);
+        void UpdateProductPhoto(string productName,BitmapImage photo);
 
-        void UserUpdateAvatar(string login,string avatar);
+        void UserUpdateAvatar(string login,BitmapImage avatar);
 
         void ChangeUserPass(string login,string pass);
 
@@ -43,7 +44,7 @@ namespace BLL
 
         void ChangeUserNickname(string login,string nick);
 
-        DTOProduct ProdInfo(string productName,string userLogin);
+        DTOProduct ProdInfo(string productName,int ID);
 
         DTOUser UsInfo(string login);
     }
