@@ -35,7 +35,7 @@ namespace DAL
                     ProductName = product.ProductName,
                     Description = product.Description,
                     Photo = product.Photo,
-                    UserLogin = product.UserLogin,
+                    UserID = product.UserID,
                     Amount = product.Amount,
                     Price = product.Price
                 });
@@ -135,7 +135,7 @@ namespace DAL
 
             using (OnlineShop shop = new OnlineShop())
             {
-                foreach (var i in shop.Products.Where(c => c.UserLogin == product.UserLogin))
+                foreach (var i in shop.Products.Where(c => c.UserID == product.UserID))
                 {
                     list.Add(i);
                 }
@@ -150,7 +150,7 @@ namespace DAL
 
             using (OnlineShop shop = new OnlineShop())
             {
-                foreach (var i in shop.Products.Where(c => c.UserLogin == null))
+                foreach (var i in shop.Products.Where(c => c.UserID == 0))
                 {
                     list.Add(i);
                 }
@@ -302,13 +302,13 @@ namespace DAL
             }
         }
 
-        public Product ProductInfo(string prodName,string userLogin)
+        public Product ProductInfo(string prodName,int userID)
         {
             Product pr = null;
 
             using (OnlineShop shop = new OnlineShop())
             {
-                pr = shop.Products.Where(c => c.ProductName == prodName && c.UserLogin == userLogin).Single();
+                pr = shop.Products.Where(c => c.ProductName == prodName && c.UserID == userID).Single();
             }
             
             return pr;

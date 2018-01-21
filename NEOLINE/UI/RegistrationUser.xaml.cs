@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WinForm = System.Windows.Forms;
 using Microsoft.Win32;
+using UI.ServiceReference1;
 
 
 namespace UI
@@ -26,7 +27,10 @@ namespace UI
         }
 
         protected Uri FileNameAvatar = null;
-         
+
+        protected Service1Client client = new Service1Client();
+
+
         private void ClickBTNSignup(object sender, RoutedEventArgs e)
         {
 
@@ -43,12 +47,15 @@ namespace UI
                 FileNameAvatar = new Uri(dialog.FileName);
             }
 
-            MEAvatar.Source = FileNameAvatar; 
+            if (FileNameAvatar != null)
+            {
+                MEAvatar.Source = FileNameAvatar;
+            } 
         }
 
         private void ClickFinishAnAvatar(object sender, MouseButtonEventArgs e)
         {
-
+          
         }
     }
 }

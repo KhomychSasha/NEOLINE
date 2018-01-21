@@ -8,7 +8,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
-namespace WCFForOnlineShopCenter
+namespace WCF
 {
     public class Service1 : IService1
     {
@@ -21,7 +21,7 @@ namespace WCFForOnlineShopCenter
 
         public DTOProduct ProdInfo(string productName, string userLogin)
         {
-            return bll.ProdInfo(productName,userLogin);
+            return bll.ProdInfo(productName, userLogin);
         }
 
         public void ChangeUserNickname(string login, string nick)

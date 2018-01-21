@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace DAL.Entities
 {
@@ -30,6 +31,6 @@ namespace DAL.Entities
 
         public bool IsAdmin { get; set; }
 
-        public string Avatar { get; set; }
+        public BitmapImage Avatar { get; set; }
     }
 }

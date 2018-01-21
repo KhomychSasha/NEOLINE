@@ -8,7 +8,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
-namespace WCFForOnlineShopCenter
+namespace WCF
 {  
     [ServiceContract]
     public interface IService1
