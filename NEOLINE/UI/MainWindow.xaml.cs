@@ -84,5 +84,10 @@ namespace UI
         {
             labelSellOnNEOLINE.Foreground = new SolidColorBrush(Colors.Black);
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            canvasDen.Children.Add(new UserWindow());
+        }
     }
 }
