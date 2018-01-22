@@ -11,8 +11,8 @@
 namespace UI.ServiceReference1 {
     using System.Runtime.Serialization;
     using System;
-    
-    
+    using System.Windows.Controls;
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/DAL.Entities")]
@@ -1046,6 +1046,11 @@ namespace UI.ServiceReference1 {
         
         public System.Threading.Tasks.Task<UI.ServiceReference1.DTOProduct> ProdInfoAsync(string productName, string userLogin) {
             return base.Channel.ProdInfoAsync(productName, userLogin);
+        }
+
+        internal void AddUser(string text1, string v, string text2, string text3, MediaElement mEAvatar)
+        {
+            throw new NotImplementedException();
         }
     }
 }

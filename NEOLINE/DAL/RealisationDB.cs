@@ -19,7 +19,8 @@ namespace DAL
                     Login = user.Login,
                     Password = user.Password,
                     Nickname = user.Nickname,
-                    Email = user.Email
+                    Email = user.Email,
+                    Avatar = user.Avatar
                 });
 
                 shop.SaveChanges();

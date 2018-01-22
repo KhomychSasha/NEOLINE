@@ -152,14 +152,15 @@ namespace BLL
             dal.ChangeUserPass(user);
         }
 
-        public void AddUser(string login, string pass, string nick, string email)
+        public void AddUser(string login, string pass, string nick, string email,BitmapImage avatar)
         {
             User user = new User()
             {
                 Login = login,
                 Password = pass,
                 Nickname = nick,
-                Email = email
+                Email = email,
+                Avatar = avatar
             };
 
             dal.AddUser(user);
