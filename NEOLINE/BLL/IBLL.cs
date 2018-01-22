@@ -10,9 +10,9 @@ namespace BLL
 {
     public interface IBLL
     {
-        void AddUser(string login, string pass, string nick, string email, BitmapImage avatar);
+        void AddUser(string login, string pass, string nick, string email, byte[] avatar);
 
-        void AddProduct(string productName, string descr, BitmapImage photo, int ID, int AmountOfProduct, int price);
+        void AddProduct(string productName, string descr, byte[] photo, int ID, int AmountOfProduct, int price);
         
         bool VerificationOnAdmin(string login, string pass);
 
@@ -34,9 +34,9 @@ namespace BLL
 
         List<Product> WarehoseProductAddedByAdmin();
 
-        void UpdateProductPhoto(string productName,BitmapImage photo);
+        void UpdateProductPhoto(string productName, byte[] photo);
 
-        void UserUpdateAvatar(string login,BitmapImage avatar);
+        void UserUpdateAvatar(string login, byte[] avatar);
 
         void ChangeUserPass(string login,string pass);
 

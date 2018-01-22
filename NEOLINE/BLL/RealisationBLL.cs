@@ -8,6 +8,7 @@ using DBNeoline;
 using DAL;
 using System.Runtime.Serialization;
 using System.Windows.Media.Imaging;
+using System.IO;
 
 namespace BLL
 {
@@ -36,7 +37,7 @@ namespace BLL
         public bool DTOIsAdmin  { get; set; }
 
         [DataMember]
-        public BitmapImage DTOAvatar { get; set; }
+        public byte[] DTOAvatar { get; set; }
     }
 
     [DataContract]
@@ -52,7 +53,7 @@ namespace BLL
         public string DTODescription { get; set; }
 
         [DataMember]
-        public BitmapImage DTOPhoto { get; set; }
+        public byte[] DTOPhoto { get; set; }
 
         [DataMember]
         public int DTOAmount { get; set; }
@@ -152,7 +153,20 @@ namespace BLL
             dal.ChangeUserPass(user);
         }
 
-        public void AddUser(string login, string pass, string nick, string email,BitmapImage avatar)
+        //public static byte[] ConvertToBytesAvatar(BitmapImage bitmapImage)
+        //{
+        //    byte[] data = null;
+        //    using (MemoryStream stream = new MemoryStream())
+        //    {
+        //        WriteableBitmap wBitmap = new WriteableBitmap(bitmapImage);
+        //        wBitmap.WritePixels(stream, wBitmap.PixelWidth, wBitmap.PixelHeight, 0, 100);
+        //        stream.Seek(0, SeekOrigin.Begin);
+        //        data = stream.GetBuffer();
+        //    }
+        //    return data;
+        //}
+
+        public void AddUser(string login, string pass, string nick, string email,byte[] avatar)
         {
             User user = new User()
             {
@@ -166,7 +180,7 @@ namespace BLL
             dal.AddUser(user);
         }
 
-        public void AddProduct(string productName, string descr, BitmapImage photo, int ID, int AmountOfProduct, int price)
+        public void AddProduct(string productName, string descr, byte[] photo, int ID, int AmountOfProduct, int price)
         {
             Product product = new Product()
             {
@@ -281,7 +295,7 @@ namespace BLL
             return dal.WarehoseProductAddedByAdmin();
         }
 
-        public void UpdateProductPhoto(string productName, BitmapImage photo)
+        public void UpdateProductPhoto(string productName, byte[] photo)
         {
             Product product = new Product()
             {
@@ -292,7 +306,7 @@ namespace BLL
             dal.UpdateProductPhoto(product);
         }
 
-        public void UserUpdateAvatar(string login, BitmapImage avatar)
+        public void UserUpdateAvatar(string login, byte[] avatar)
         {
             User user = new User()
             {

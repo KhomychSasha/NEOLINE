@@ -3,7 +3,7 @@
   <xs:import schemaLocation="http://localhost:3840/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DAL.Entities" />
   <xs:complexType name="DTOUser">
     <xs:sequence>
-      <xs:element minOccurs="0" name="DTOAvatar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DTOAvatar" nillable="true" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="DTOEmail" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DTOId" type="xs:int" />
       <xs:element minOccurs="0" name="DTOIsAdmin" type="xs:boolean" />
@@ -18,13 +18,13 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="DTOAmount" type="xs:int" />
       <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DAL.Entities" minOccurs="0" name="DTOCategories" nillable="true" type="q2:Category" />
-      <xs:element minOccurs="0" name="DTOCategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DTOCategoryID" type="xs:int" />
       <xs:element minOccurs="0" name="DTODescription" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DTOId" type="xs:int" />
-      <xs:element minOccurs="0" name="DTOPhoto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DTOPhoto" nillable="true" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="DTOPrice" type="xs:int" />
       <xs:element minOccurs="0" name="DTOProductName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DTOUserLogin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DTOUserID" type="xs:int" />
       <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DAL.Entities" minOccurs="0" name="DTOUsersProducts" nillable="true" type="q3:User" />
     </xs:sequence>
   </xs:complexType>

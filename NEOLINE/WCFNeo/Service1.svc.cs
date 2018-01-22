@@ -15,10 +15,10 @@ namespace WCFNeo
     public interface IService1
     {
         [OperationContract]
-        void AddUser(string login, string pass, string nick, string email);
+        void AddUser(string login, string pass, string nick, string email, byte[] avatar);
 
         [OperationContract]
-        void AddProduct(string productName, string descr, BitmapImage photo, int userID, int AmountOfProduct, int price);
+        void AddProduct(string productName, string descr, byte[] photo, int userID, int AmountOfProduct, int price);
 
         [OperationContract]
         bool VerificationOnAdmin(string login, string pass);
@@ -51,10 +51,10 @@ namespace WCFNeo
         List<Product> WarehoseProductAddedByAdmin();
 
         [OperationContract]
-        void UpdateProductPhoto(string productName, BitmapImage photo);
+        void UpdateProductPhoto(string productName, byte[] photo);
 
         [OperationContract]
-        void UserUpdateAvatar(string login, BitmapImage avatar);
+        void UserUpdateAvatar(string login, byte[] avatar);
 
         [OperationContract]
         void ChangePass(string login, string pass);

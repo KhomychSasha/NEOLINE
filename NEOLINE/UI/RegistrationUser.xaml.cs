@@ -16,6 +16,7 @@ using WinForm = System.Windows.Forms;
 using Microsoft.Win32;
 using UI.ServiceReference1;
 using System.Security.Cryptography;
+using System.IO;
 
 namespace UI
 {
@@ -46,6 +47,8 @@ namespace UI
             return HashPass;
         }
 
+        protected byte[] ImageByte;
+
         private void ClickBTNSignup(object sender, RoutedEventArgs e)
         {
             try
@@ -57,14 +60,25 @@ namespace UI
                     flagForSkipToReg = true;
                 }
 
+                else
+                {
+                    LBLMessage.Foreground = new SolidColorBrush(Colors.Orange);
+                    LBLMessage.Content = "Fill all fields upper";
+                }
+
                 if (client.VerificationLogin(TBLogin.Text) == false)
                 {
                     if (client.VerificationNickname(TBNickname.Text) == false)
                     {
                         if (flagForSkipToReg == true)
                         {
-                            client.AddUser(TBLogin.Text, HashPass(PBPass.Password), TBNickname.Text, TBEmail.Text, MEAvatar);
+                            ImageByte = File.ReadAllBytes(MEAvatar.Source.ToString());
+
+                            client.AddUser(TBLogin.Text, HashPass(PBPass.Password), TBNickname.Text, TBEmail.Text, ImageByte);
+
+                            LBLMessage.Foreground = new SolidColorBrush(Colors.Green);
                             LBLMessage.Content = "!!!--You succesfully registred--!!!";
+                            flagForSkipToReg = false;
                         }
                         else
                         {
@@ -73,11 +87,13 @@ namespace UI
                     }
                     else
                     {
+                        LBLMessage.Foreground = new SolidColorBrush(Colors.Red);
                         LBLMessage.Content = "The same nickname is already exist";
                     }
                 }
                 else
                 {
+                    LBLMessage.Foreground = new SolidColorBrush(Colors.Red);
                     LBLMessage.Content = "The same login is already exist";
                 }
             }

@@ -21,7 +21,7 @@ namespace DAL.Entities
         [Required]
         public string Description { get; set; }
 
-        public BitmapImage Photo { get; set; }
+        public byte[] Photo { get; set; }
 
         [Required]
         public int Amount { get; set; }

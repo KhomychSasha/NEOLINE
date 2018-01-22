@@ -40,12 +40,12 @@ namespace WCFNeo
             bll.ChangeUserPass(login, pass);
         }
 
-        public void AddUser(string login, string pass, string nick, string email)
+        public void AddUser(string login, string pass, string nick, string email, byte[] avatar)
         {
-            bll.AddUser(login, pass, nick, email);
+            bll.AddUser(login, pass, nick, email,avatar);
         }
 
-        public void AddProduct(string productName, string descr, BitmapImage photo, int userID, int AmountOfProduct, int price)
+        public void AddProduct(string productName, string descr, byte[] photo, int userID, int AmountOfProduct, int price)
         {
             bll.AddProduct(productName, descr, photo, userID, AmountOfProduct, price);
         }
@@ -100,12 +100,12 @@ namespace WCFNeo
             return bll.WarehoseProductAddedByAdmin();
         }
 
-        public void UpdateProductPhoto(string productName, BitmapImage photo)
+        public void UpdateProductPhoto(string productName, byte[] photo)
         {
             bll.UpdateProductPhoto(productName, photo);
         }
 
-        public void UserUpdateAvatar(string login, BitmapImage avatar)
+        public void UserUpdateAvatar(string login, byte[] avatar)
         {
             bll.UserUpdateAvatar(login, avatar);
         }

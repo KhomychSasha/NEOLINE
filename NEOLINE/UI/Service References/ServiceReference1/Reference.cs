@@ -11,8 +11,8 @@
 namespace UI.ServiceReference1 {
     using System.Runtime.Serialization;
     using System;
-    using System.Windows.Controls;
-
+    
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/DAL.Entities")]
@@ -26,7 +26,10 @@ namespace UI.ServiceReference1 {
         private int AmountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CategoryNameField;
+        private UI.ServiceReference1.Category CategoriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CategoryIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescriptionField;
@@ -35,7 +38,7 @@ namespace UI.ServiceReference1 {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PhotoField;
+        private byte[] PhotoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int PriceField;
@@ -44,7 +47,10 @@ namespace UI.ServiceReference1 {
         private string ProductNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UserLoginField;
+        private int UserIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UI.ServiceReference1.User UserIDsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -70,14 +76,27 @@ namespace UI.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CategoryName {
+        public UI.ServiceReference1.Category Categories {
             get {
-                return this.CategoryNameField;
+                return this.CategoriesField;
             }
             set {
-                if ((object.ReferenceEquals(this.CategoryNameField, value) != true)) {
-                    this.CategoryNameField = value;
-                    this.RaisePropertyChanged("CategoryName");
+                if ((object.ReferenceEquals(this.CategoriesField, value) != true)) {
+                    this.CategoriesField = value;
+                    this.RaisePropertyChanged("Categories");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CategoryID {
+            get {
+                return this.CategoryIDField;
+            }
+            set {
+                if ((this.CategoryIDField.Equals(value) != true)) {
+                    this.CategoryIDField = value;
+                    this.RaisePropertyChanged("CategoryID");
                 }
             }
         }
@@ -109,7 +128,7 @@ namespace UI.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Photo {
+        public byte[] Photo {
             get {
                 return this.PhotoField;
             }
@@ -148,14 +167,261 @@ namespace UI.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UserLogin {
+        public int UserID {
             get {
-                return this.UserLoginField;
+                return this.UserIDField;
             }
             set {
-                if ((object.ReferenceEquals(this.UserLoginField, value) != true)) {
-                    this.UserLoginField = value;
-                    this.RaisePropertyChanged("UserLogin");
+                if ((this.UserIDField.Equals(value) != true)) {
+                    this.UserIDField = value;
+                    this.RaisePropertyChanged("UserID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UI.ServiceReference1.User UserIDs {
+            get {
+                return this.UserIDsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserIDsField, value) != true)) {
+                    this.UserIDsField = value;
+                    this.RaisePropertyChanged("UserIDs");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Category", Namespace="http://schemas.datacontract.org/2004/07/DAL.Entities")]
+    [System.SerializableAttribute()]
+    public partial class Category : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CategoryNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UI.ServiceReference1.Product[] ProductsInCategoryField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CategoryName {
+            get {
+                return this.CategoryNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoryNameField, value) != true)) {
+                    this.CategoryNameField = value;
+                    this.RaisePropertyChanged("CategoryName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UI.ServiceReference1.Product[] ProductsInCategory {
+            get {
+                return this.ProductsInCategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductsInCategoryField, value) != true)) {
+                    this.ProductsInCategoryField = value;
+                    this.RaisePropertyChanged("ProductsInCategory");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/DAL.Entities")]
+    [System.SerializableAttribute()]
+    public partial class User : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] AvatarField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsAdminField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LoginField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NicknameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UI.ServiceReference1.Product[] ProductsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] Avatar {
+            get {
+                return this.AvatarField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AvatarField, value) != true)) {
+                    this.AvatarField = value;
+                    this.RaisePropertyChanged("Avatar");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsAdmin {
+            get {
+                return this.IsAdminField;
+            }
+            set {
+                if ((this.IsAdminField.Equals(value) != true)) {
+                    this.IsAdminField = value;
+                    this.RaisePropertyChanged("IsAdmin");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Login {
+            get {
+                return this.LoginField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LoginField, value) != true)) {
+                    this.LoginField = value;
+                    this.RaisePropertyChanged("Login");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nickname {
+            get {
+                return this.NicknameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NicknameField, value) != true)) {
+                    this.NicknameField = value;
+                    this.RaisePropertyChanged("Nickname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UI.ServiceReference1.Product[] Products {
+            get {
+                return this.ProductsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductsField, value) != true)) {
+                    this.ProductsField = value;
+                    this.RaisePropertyChanged("Products");
                 }
             }
         }
@@ -180,7 +446,7 @@ namespace UI.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DTOAvatarField;
+        private byte[] DTOAvatarField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DTOEmailField;
@@ -214,7 +480,7 @@ namespace UI.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DTOAvatar {
+        public byte[] DTOAvatar {
             get {
                 return this.DTOAvatarField;
             }
@@ -343,7 +609,7 @@ namespace UI.ServiceReference1 {
         private UI.ServiceReference1.Category DTOCategoriesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DTOCategoryNameField;
+        private int DTOCategoryIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DTODescriptionField;
@@ -352,7 +618,7 @@ namespace UI.ServiceReference1 {
         private int DTOIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DTOPhotoField;
+        private byte[] DTOPhotoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int DTOPriceField;
@@ -361,7 +627,7 @@ namespace UI.ServiceReference1 {
         private string DTOProductNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DTOUserLoginField;
+        private int DTOUserIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private UI.ServiceReference1.User DTOUsersProductsField;
@@ -403,14 +669,14 @@ namespace UI.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DTOCategoryName {
+        public int DTOCategoryID {
             get {
-                return this.DTOCategoryNameField;
+                return this.DTOCategoryIDField;
             }
             set {
-                if ((object.ReferenceEquals(this.DTOCategoryNameField, value) != true)) {
-                    this.DTOCategoryNameField = value;
-                    this.RaisePropertyChanged("DTOCategoryName");
+                if ((this.DTOCategoryIDField.Equals(value) != true)) {
+                    this.DTOCategoryIDField = value;
+                    this.RaisePropertyChanged("DTOCategoryID");
                 }
             }
         }
@@ -442,7 +708,7 @@ namespace UI.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DTOPhoto {
+        public byte[] DTOPhoto {
             get {
                 return this.DTOPhotoField;
             }
@@ -481,14 +747,14 @@ namespace UI.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DTOUserLogin {
+        public int DTOUserID {
             get {
-                return this.DTOUserLoginField;
+                return this.DTOUserIDField;
             }
             set {
-                if ((object.ReferenceEquals(this.DTOUserLoginField, value) != true)) {
-                    this.DTOUserLoginField = value;
-                    this.RaisePropertyChanged("DTOUserLogin");
+                if ((this.DTOUserIDField.Equals(value) != true)) {
+                    this.DTOUserIDField = value;
+                    this.RaisePropertyChanged("DTOUserID");
                 }
             }
         }
@@ -516,255 +782,21 @@ namespace UI.ServiceReference1 {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Category", Namespace="http://schemas.datacontract.org/2004/07/DAL.Entities")]
-    [System.SerializableAttribute()]
-    public partial class Category : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CategoryNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UI.ServiceReference1.Product[] ProductsInCategoryField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CategoryName {
-            get {
-                return this.CategoryNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CategoryNameField, value) != true)) {
-                    this.CategoryNameField = value;
-                    this.RaisePropertyChanged("CategoryName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UI.ServiceReference1.Product[] ProductsInCategory {
-            get {
-                return this.ProductsInCategoryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductsInCategoryField, value) != true)) {
-                    this.ProductsInCategoryField = value;
-                    this.RaisePropertyChanged("ProductsInCategory");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/DAL.Entities")]
-    [System.SerializableAttribute()]
-    public partial class User : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AvatarField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsAdminField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LoginField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NicknameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PasswordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UI.ServiceReference1.Product[] ProductsField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Avatar {
-            get {
-                return this.AvatarField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AvatarField, value) != true)) {
-                    this.AvatarField = value;
-                    this.RaisePropertyChanged("Avatar");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsAdmin {
-            get {
-                return this.IsAdminField;
-            }
-            set {
-                if ((this.IsAdminField.Equals(value) != true)) {
-                    this.IsAdminField = value;
-                    this.RaisePropertyChanged("IsAdmin");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Login {
-            get {
-                return this.LoginField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LoginField, value) != true)) {
-                    this.LoginField = value;
-                    this.RaisePropertyChanged("Login");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Nickname {
-            get {
-                return this.NicknameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NicknameField, value) != true)) {
-                    this.NicknameField = value;
-                    this.RaisePropertyChanged("Nickname");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Password {
-            get {
-                return this.PasswordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
-                    this.PasswordField = value;
-                    this.RaisePropertyChanged("Password");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UI.ServiceReference1.Product[] Products {
-            get {
-                return this.ProductsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductsField, value) != true)) {
-                    this.ProductsField = value;
-                    this.RaisePropertyChanged("Products");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddUser", ReplyAction="http://tempuri.org/IService1/AddUserResponse")]
-        void AddUser(string login, string pass, string nick, string email);
+        void AddUser(string login, string pass, string nick, string email, byte[] avatar);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddUser", ReplyAction="http://tempuri.org/IService1/AddUserResponse")]
-        System.Threading.Tasks.Task AddUserAsync(string login, string pass, string nick, string email);
+        System.Threading.Tasks.Task AddUserAsync(string login, string pass, string nick, string email, byte[] avatar);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddProduct", ReplyAction="http://tempuri.org/IService1/AddProductResponse")]
-        void AddProduct(string productName, string descr, string photo, string login, int AmountOfProduct, int price);
+        void AddProduct(string productName, string descr, byte[] photo, int userID, int AmountOfProduct, int price);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddProduct", ReplyAction="http://tempuri.org/IService1/AddProductResponse")]
-        System.Threading.Tasks.Task AddProductAsync(string productName, string descr, string photo, string login, int AmountOfProduct, int price);
+        System.Threading.Tasks.Task AddProductAsync(string productName, string descr, byte[] photo, int userID, int AmountOfProduct, int price);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VerificationOnAdmin", ReplyAction="http://tempuri.org/IService1/VerificationOnAdminResponse")]
         bool VerificationOnAdmin(string login, string pass);
@@ -815,10 +847,10 @@ namespace UI.ServiceReference1 {
         System.Threading.Tasks.Task UpdateProductDescriptionAsync(string nameProduct, string description);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UserProduct", ReplyAction="http://tempuri.org/IService1/UserProductResponse")]
-        UI.ServiceReference1.Product[] UserProduct(string login);
+        UI.ServiceReference1.Product[] UserProduct(int ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UserProduct", ReplyAction="http://tempuri.org/IService1/UserProductResponse")]
-        System.Threading.Tasks.Task<UI.ServiceReference1.Product[]> UserProductAsync(string login);
+        System.Threading.Tasks.Task<UI.ServiceReference1.Product[]> UserProductAsync(int ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/WarehoseProductAddedByAdmin", ReplyAction="http://tempuri.org/IService1/WarehoseProductAddedByAdminResponse")]
         UI.ServiceReference1.Product[] WarehoseProductAddedByAdmin();
@@ -827,16 +859,16 @@ namespace UI.ServiceReference1 {
         System.Threading.Tasks.Task<UI.ServiceReference1.Product[]> WarehoseProductAddedByAdminAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProductPhoto", ReplyAction="http://tempuri.org/IService1/UpdateProductPhotoResponse")]
-        void UpdateProductPhoto(string productName, string photo);
+        void UpdateProductPhoto(string productName, byte[] photo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProductPhoto", ReplyAction="http://tempuri.org/IService1/UpdateProductPhotoResponse")]
-        System.Threading.Tasks.Task UpdateProductPhotoAsync(string productName, string photo);
+        System.Threading.Tasks.Task UpdateProductPhotoAsync(string productName, byte[] photo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UserUpdateAvatar", ReplyAction="http://tempuri.org/IService1/UserUpdateAvatarResponse")]
-        void UserUpdateAvatar(string login, string avatar);
+        void UserUpdateAvatar(string login, byte[] avatar);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UserUpdateAvatar", ReplyAction="http://tempuri.org/IService1/UserUpdateAvatarResponse")]
-        System.Threading.Tasks.Task UserUpdateAvatarAsync(string login, string avatar);
+        System.Threading.Tasks.Task UserUpdateAvatarAsync(string login, byte[] avatar);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ChangePass", ReplyAction="http://tempuri.org/IService1/ChangePassResponse")]
         void ChangePass(string login, string pass);
@@ -863,10 +895,10 @@ namespace UI.ServiceReference1 {
         System.Threading.Tasks.Task<UI.ServiceReference1.DTOUser> UserInfoAsync(string login);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ProdInfo", ReplyAction="http://tempuri.org/IService1/ProdInfoResponse")]
-        UI.ServiceReference1.DTOProduct ProdInfo(string productName, string userLogin);
+        UI.ServiceReference1.DTOProduct ProdInfo(string productName, int userID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ProdInfo", ReplyAction="http://tempuri.org/IService1/ProdInfoResponse")]
-        System.Threading.Tasks.Task<UI.ServiceReference1.DTOProduct> ProdInfoAsync(string productName, string userLogin);
+        System.Threading.Tasks.Task<UI.ServiceReference1.DTOProduct> ProdInfoAsync(string productName, int userID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -896,20 +928,20 @@ namespace UI.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public void AddUser(string login, string pass, string nick, string email) {
-            base.Channel.AddUser(login, pass, nick, email);
+        public void AddUser(string login, string pass, string nick, string email, byte[] avatar) {
+            base.Channel.AddUser(login, pass, nick, email, avatar);
         }
         
-        public System.Threading.Tasks.Task AddUserAsync(string login, string pass, string nick, string email) {
-            return base.Channel.AddUserAsync(login, pass, nick, email);
+        public System.Threading.Tasks.Task AddUserAsync(string login, string pass, string nick, string email, byte[] avatar) {
+            return base.Channel.AddUserAsync(login, pass, nick, email, avatar);
         }
         
-        public void AddProduct(string productName, string descr, string photo, string login, int AmountOfProduct, int price) {
-            base.Channel.AddProduct(productName, descr, photo, login, AmountOfProduct, price);
+        public void AddProduct(string productName, string descr, byte[] photo, int userID, int AmountOfProduct, int price) {
+            base.Channel.AddProduct(productName, descr, photo, userID, AmountOfProduct, price);
         }
         
-        public System.Threading.Tasks.Task AddProductAsync(string productName, string descr, string photo, string login, int AmountOfProduct, int price) {
-            return base.Channel.AddProductAsync(productName, descr, photo, login, AmountOfProduct, price);
+        public System.Threading.Tasks.Task AddProductAsync(string productName, string descr, byte[] photo, int userID, int AmountOfProduct, int price) {
+            return base.Channel.AddProductAsync(productName, descr, photo, userID, AmountOfProduct, price);
         }
         
         public bool VerificationOnAdmin(string login, string pass) {
@@ -976,12 +1008,12 @@ namespace UI.ServiceReference1 {
             return base.Channel.UpdateProductDescriptionAsync(nameProduct, description);
         }
         
-        public UI.ServiceReference1.Product[] UserProduct(string login) {
-            return base.Channel.UserProduct(login);
+        public UI.ServiceReference1.Product[] UserProduct(int ID) {
+            return base.Channel.UserProduct(ID);
         }
         
-        public System.Threading.Tasks.Task<UI.ServiceReference1.Product[]> UserProductAsync(string login) {
-            return base.Channel.UserProductAsync(login);
+        public System.Threading.Tasks.Task<UI.ServiceReference1.Product[]> UserProductAsync(int ID) {
+            return base.Channel.UserProductAsync(ID);
         }
         
         public UI.ServiceReference1.Product[] WarehoseProductAddedByAdmin() {
@@ -992,19 +1024,19 @@ namespace UI.ServiceReference1 {
             return base.Channel.WarehoseProductAddedByAdminAsync();
         }
         
-        public void UpdateProductPhoto(string productName, string photo) {
+        public void UpdateProductPhoto(string productName, byte[] photo) {
             base.Channel.UpdateProductPhoto(productName, photo);
         }
         
-        public System.Threading.Tasks.Task UpdateProductPhotoAsync(string productName, string photo) {
+        public System.Threading.Tasks.Task UpdateProductPhotoAsync(string productName, byte[] photo) {
             return base.Channel.UpdateProductPhotoAsync(productName, photo);
         }
         
-        public void UserUpdateAvatar(string login, string avatar) {
+        public void UserUpdateAvatar(string login, byte[] avatar) {
             base.Channel.UserUpdateAvatar(login, avatar);
         }
         
-        public System.Threading.Tasks.Task UserUpdateAvatarAsync(string login, string avatar) {
+        public System.Threading.Tasks.Task UserUpdateAvatarAsync(string login, byte[] avatar) {
             return base.Channel.UserUpdateAvatarAsync(login, avatar);
         }
         
@@ -1040,17 +1072,12 @@ namespace UI.ServiceReference1 {
             return base.Channel.UserInfoAsync(login);
         }
         
-        public UI.ServiceReference1.DTOProduct ProdInfo(string productName, string userLogin) {
-            return base.Channel.ProdInfo(productName, userLogin);
+        public UI.ServiceReference1.DTOProduct ProdInfo(string productName, int userID) {
+            return base.Channel.ProdInfo(productName, userID);
         }
         
-        public System.Threading.Tasks.Task<UI.ServiceReference1.DTOProduct> ProdInfoAsync(string productName, string userLogin) {
-            return base.Channel.ProdInfoAsync(productName, userLogin);
-        }
-
-        internal void AddUser(string text1, string v, string text2, string text3, MediaElement mEAvatar)
-        {
-            throw new NotImplementedException();
+        public System.Threading.Tasks.Task<UI.ServiceReference1.DTOProduct> ProdInfoAsync(string productName, int userID) {
+            return base.Channel.ProdInfoAsync(productName, userID);
         }
     }
 }

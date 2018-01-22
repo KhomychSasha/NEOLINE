@@ -31,6 +31,6 @@ namespace DAL.Entities
 
         public bool IsAdmin { get; set; }
 
-        public BitmapImage Avatar { get; set; }
+        public byte[] Avatar { get; set; }
     }
 }
