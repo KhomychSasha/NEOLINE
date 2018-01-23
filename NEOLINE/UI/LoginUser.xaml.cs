@@ -26,8 +26,9 @@ namespace UI
 
         private void ClickBTNSignUp(object sender, RoutedEventArgs e)
         {
-            RegistrationUser userReg = new RegistrationUser();
+            MainWindow MW = new MainWindow();
 
+            MW.canvasDen.Children.Add(new RegistrationUser());
             
         }
 
