@@ -153,19 +153,6 @@ namespace BLL
             dal.ChangeUserPass(user);
         }
 
-        //public static byte[] ConvertToBytesAvatar(BitmapImage bitmapImage)
-        //{
-        //    byte[] data = null;
-        //    using (MemoryStream stream = new MemoryStream())
-        //    {
-        //        WriteableBitmap wBitmap = new WriteableBitmap(bitmapImage);
-        //        wBitmap.WritePixels(stream, wBitmap.PixelWidth, wBitmap.PixelHeight, 0, 100);
-        //        stream.Seek(0, SeekOrigin.Begin);
-        //        data = stream.GetBuffer();
-        //    }
-        //    return data;
-        //}
-
         public void AddUser(string login, string pass, string nick, string email,byte[] avatar)
         {
             User user = new User()
