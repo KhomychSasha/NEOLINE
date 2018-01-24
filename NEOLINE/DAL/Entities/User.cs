@@ -39,6 +39,7 @@ namespace DAL.Entities
         [DataMember]
         public bool IsAdmin { get; set; }
 
+        [DataMember]
         public byte[] Avatar { get; set; }
     }
 }

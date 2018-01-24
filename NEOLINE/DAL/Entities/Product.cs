@@ -35,13 +35,13 @@ namespace DAL.Entities
         [Required]
         public int Price { get; set; }
 
-
+        [DataMember]
         public int UserID { get; set; }
 
         [ForeignKey("UserID")]
         public virtual User UserIDs { get; set; }
 
-
+        [DataMember]
         public int CategoryID { get; set; }
 
         [ForeignKey("CategoryID")]

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL.Entities;
 using DBNeoline;
+using System.Windows.Media;
 
 namespace CreateDB
 {
@@ -19,7 +20,7 @@ namespace CreateDB
                     shop.Users.Add(new User() { Login = "dfh", Password = "Pass", Nickname = "dfh", Email = "sdh" });
                     shop.SaveChanges();
                 }
-
+               
                 Console.WriteLine("DB successfully created");
             }
             catch(Exception e)
