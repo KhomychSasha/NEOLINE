@@ -14,7 +14,7 @@ namespace DAL
         {
             using (OnlineShop OS = new OnlineShop())
             {
-
+                OS.Users.Add(new Entities.User() {Login = "dfh", Password = "Pass",Nickname = "dfh",Email = "sdh"});
             }
 
             shop.SaveChanges();

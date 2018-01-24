@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BLL" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BLL" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:3840/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DAL.Entities" />
+  <xs:complexType name="DTOUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DTOAvatar" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="DTOEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DTOId" type="xs:int" />
+      <xs:element minOccurs="0" name="DTOIsAdmin" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DTOLogin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DTONickname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DTOPassword" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DAL.Entities" minOccurs="0" name="DTOProducts" nillable="true" type="q1:ArrayOfProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DTOUser" nillable="true" type="tns:DTOUser" />
+  <xs:complexType name="DTOProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DTOAmount" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DAL.Entities" minOccurs="0" name="DTOCategories" nillable="true" type="q2:Category" />
+      <xs:element minOccurs="0" name="DTOCategoryID" type="xs:int" />
+      <xs:element minOccurs="0" name="DTODescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DTOId" type="xs:int" />
+      <xs:element minOccurs="0" name="DTOPhoto" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="DTOPrice" type="xs:int" />
+      <xs:element minOccurs="0" name="DTOProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DTOUserID" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DAL.Entities" minOccurs="0" name="DTOUsersProducts" nillable="true" type="q3:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DTOProduct" nillable="true" type="tns:DTOProduct" />
+</xs:schema>

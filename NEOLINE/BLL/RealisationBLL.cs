@@ -7,6 +7,8 @@ using DAL.Entities;
 using DBNeoline;
 using DAL;
 using System.Runtime.Serialization;
+using System.Windows.Media.Imaging;
+using System.IO;
 
 namespace BLL
 {
@@ -35,41 +37,41 @@ namespace BLL
         public bool DTOIsAdmin  { get; set; }
 
         [DataMember]
-        public string DTOAvatar { get; set; }
+        public byte[] DTOAvatar { get; set; }
     }
 
     [DataContract]
     public class DTOProduct
     {
         [DataMember]
-        public int Id { get; set; }
+        public int DTOId { get; set; }
 
         [DataMember]
-        public string ProductName { get; set; }
+        public string DTOProductName { get; set; }
 
         [DataMember]
-        public string Description { get; set; }
+        public string DTODescription { get; set; }
 
         [DataMember]
-        public string Photo { get; set; }
+        public byte[] DTOPhoto { get; set; }
 
         [DataMember]
-        public int Amount { get; set; }
+        public int DTOAmount { get; set; }
 
         [DataMember]
-        public int Price { get; set; }
+        public int DTOPrice { get; set; }
 
         [DataMember]
-        public string UserLogin { get; set; }
+        public int DTOUserID { get; set; }
 
         [DataMember]
-        public virtual User UsersProducts { get; set; }
+        public virtual User DTOUsersProducts { get; set; }
 
         [DataMember]
-        public string CategoryName { get; set; }
+        public int DTOCategoryID { get; set; }
 
         [DataMember]
-        public virtual Category Categories { get; set; }
+        public virtual Category DTOCategories { get; set; }
     }
 
 
@@ -97,22 +99,22 @@ namespace BLL
             return us;
         }
 
-        public DTOProduct ProdInfo(string productName, string userLogin)
+        public DTOProduct ProdInfo(string productName, int userID)
         {
-            Product prod = dal.ProductInfo(productName,userLogin);
+            Product prod = dal.ProductInfo(productName,userID);
 
             DTOProduct product = new DTOProduct()
             {
-                Id = prod.Id,
-                ProductName = prod.ProductName,
-                Description = prod.Description,
-                Amount = prod.Amount,
-                CategoryName = prod.CategoryName,
-                Categories = prod.Categories,
-                Photo = prod.Photo,
-                Price = prod.Price,
-                UserLogin = prod.UserLogin,
-                UsersProducts = prod.UsersProducts
+                DTOId = prod.Id,
+                DTOProductName = prod.ProductName,
+                DTODescription = prod.Description,
+                DTOAmount = prod.Amount,
+                DTOCategoryID = prod.CategoryID,
+                DTOCategories = prod.Categories,
+                DTOPhoto = prod.Photo,
+                DTOPrice = prod.Price,
+                DTOUserID = prod.UserID,
+                DTOUsersProducts = prod.UserIDs
             };
 
             return product;
@@ -151,27 +153,28 @@ namespace BLL
             dal.ChangeUserPass(user);
         }
 
-        public void AddUser(string login, string pass, string nick, string email)
+        public void AddUser(string login, string pass, string nick, string email,byte[] avatar)
         {
             User user = new User()
             {
                 Login = login,
                 Password = pass,
                 Nickname = nick,
-                Email = email
+                Email = email,
+                Avatar = avatar
             };
 
             dal.AddUser(user);
         }
 
-        public void AddProduct(string productName, string descr, string photo, string login, int AmountOfProduct, int price)
+        public void AddProduct(string productName, string descr, byte[] photo, int ID, int AmountOfProduct, int price)
         {
             Product product = new Product()
             {
                 ProductName = productName,
                 Description = descr,
                 Photo = photo,
-                UserLogin = login,
+                UserID = ID,
                 Amount = AmountOfProduct,
                 Price = price
             };
@@ -264,11 +267,11 @@ namespace BLL
             dal.UpdateProductDescription(product);
         }
 
-        public List<Product> UserProduct(string login)
+        public List<Product> UserProduct(int ID)
         {
             Product prod = new Product()
             {
-                UserLogin = login
+                UserID = ID
             };
 
             return dal.UserProduct(prod);
@@ -279,7 +282,7 @@ namespace BLL
             return dal.WarehoseProductAddedByAdmin();
         }
 
-        public void UpdateProductPhoto(string productName, string photo)
+        public void UpdateProductPhoto(string productName, byte[] photo)
         {
             Product product = new Product()
             {
@@ -290,7 +293,7 @@ namespace BLL
             dal.UpdateProductPhoto(product);
         }
 
-        public void UserUpdateAvatar(string login, string avatar)
+        public void UserUpdateAvatar(string login, byte[] avatar)
         {
             User user = new User()
             {

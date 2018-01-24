@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace DAL.Entities
 {
@@ -24,8 +25,7 @@ namespace DAL.Entities
         [Required]
         public string Description { get; set; }
 
-        [DataMember]
-        public string Photo { get; set; }
+        public byte[] Photo { get; set; }
 
         [DataMember]
         [Required]
@@ -36,17 +36,15 @@ namespace DAL.Entities
         public int Price { get; set; }
 
 
-        [DataMember]
-        public string UserLogin { get; set; }
-        [DataMember]
-        [ForeignKey("UserLogin")]
-        public virtual User UsersProducts { get; set; }
+        public int UserID { get; set; }
+
+        [ForeignKey("UserID")]
+        public virtual User UserIDs { get; set; }
 
 
-        [DataMember]
-        public string CategoryName { get; set; }
-        [DataMember]
-        [ForeignKey("CategoryName")]
+        public int CategoryID { get; set; }
+
+        [ForeignKey("CategoryID")]
         public virtual Category Categories { get; set; }
     }
 }

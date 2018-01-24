@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace UI
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -83,6 +80,16 @@ namespace UI
         private void SellOnNEOLINE_MouseLeave(object sender, MouseEventArgs e)
         {
             labelSellOnNEOLINE.Foreground = new SolidColorBrush(Colors.Black);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            canvasDen.Children.Add(new LoginUser());
+        }
+
+        private void CloseMW(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
