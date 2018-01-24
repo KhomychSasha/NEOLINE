@@ -84,7 +84,7 @@ namespace UI
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            canvasDen.Children.Add(new LoginUser());
+            canvasDen.Children.Add(new RegistrationUser());
         }
 
         private void CloseMW(object sender, System.ComponentModel.CancelEventArgs e)

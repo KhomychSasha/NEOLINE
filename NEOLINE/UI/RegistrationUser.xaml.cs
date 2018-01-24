@@ -124,5 +124,10 @@ namespace UI
         {
           
         }
+
+        private void ExitClick(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

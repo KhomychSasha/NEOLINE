@@ -27,7 +27,8 @@
             </Viewbox>
   
         </Grid>
-        <Canvas x:Name="canvasDen" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Width="1000" Height="600"/>
+        
+        <Canvas x:Name="canvasDen" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" />
 
 
         <Grid Grid.Column="1" Grid.RowSpan="2">
