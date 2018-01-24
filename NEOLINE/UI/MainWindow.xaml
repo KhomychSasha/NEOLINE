@@ -28,7 +28,9 @@
   
         </Grid>
         
-        <Canvas x:Name="canvasDen" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+        <!--<Canvas x:Name="canvasDen" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" />-->
+
+        <StackPanel x:Name="SPMX" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Margin="5" />
 
 
         <Grid Grid.Column="1" Grid.RowSpan="2">
@@ -78,7 +80,7 @@
 
                 <TextBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" TextWrapping="Wrap" Text="Search" Foreground="#7F000000"  TextDecorations="{x:Null}" FontFamily="Segoe UI Emoji" FontSize="22"/>
                 <Button Grid.Column="5" Margin="5,5,55,5">
-                    <Image Source="C:\Users\фкуівц\source\repos\NEOLINE\NEOLINE\UI\Icon\search-logo-hi.png"/>
+                    <Image Source="C:\Users\Xam\source\repos\NEOLINE\NEOLINE\UI\Icon\search-logo-hi.png"/>
                 </Button>
                 <Button Content="Button" Grid.Column="5" HorizontalAlignment="Left" Margin="194.8,8,-154.6,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
 

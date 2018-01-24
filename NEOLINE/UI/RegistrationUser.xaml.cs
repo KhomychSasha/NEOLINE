@@ -51,56 +51,61 @@ namespace UI
 
         private void ClickBTNSignup(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                Service1Client client = new Service1Client();
+            MainWindow mw = new MainWindow();
 
-                if (TBLogin.Text != "" && TBNickname.Text != "" && TBEmail.Text != "" && PBPass.Password != "")
-                {
-                    flagForSkipToReg = true;
-                }
+            mw.Show();
 
-                else
-                {
-                    LBLMessage.Foreground = new SolidColorBrush(Colors.Orange);
-                    LBLMessage.Content = "Fill all fields upper";
-                }
 
-                if (client.VerificationLogin(TBLogin.Text) == false)
-                {
-                    if (client.VerificationNickname(TBNickname.Text) == false)
-                    {
-                        if (flagForSkipToReg == true)
-                        {
-                            ImageByte = File.ReadAllBytes(MEAvatar.Source.ToString());
+            //try
+            //{
+            //    Service1Client client = new Service1Client();
 
-                            client.AddUser(TBLogin.Text, HashPass(PBPass.Password), TBNickname.Text, TBEmail.Text, ImageByte);
+            //    if (TBLogin.Text != "" && TBNickname.Text != "" && TBEmail.Text != "" && PBPass.Password != "")
+            //    {
+            //        flagForSkipToReg = true;
+            //    }
 
-                            LBLMessage.Foreground = new SolidColorBrush(Colors.Green);
-                            LBLMessage.Content = "!!!--You succesfully registred--!!!";
-                            flagForSkipToReg = false;
-                        }
-                        else
-                        {
+            //    else
+            //    {
+            //        LBLMessage.Foreground = new SolidColorBrush(Colors.Orange);
+            //        LBLMessage.Content = "Fill all fields upper";
+            //    }
 
-                        }
-                    }
-                    else
-                    {
-                        LBLMessage.Foreground = new SolidColorBrush(Colors.Red);
-                        LBLMessage.Content = "The same nickname is already exist";
-                    }
-                }
-                else
-                {
-                    LBLMessage.Foreground = new SolidColorBrush(Colors.Red);
-                    LBLMessage.Content = "The same login is already exist";
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Process is down because: " + ex.Message);
-            }
+            //    if (client.VerificationLogin(TBLogin.Text) == false)
+            //    {
+            //        if (client.VerificationNickname(TBNickname.Text) == false)
+            //        {
+            //            if (flagForSkipToReg == true)
+            //            {
+            //                ImageByte = File.ReadAllBytes(MEAvatar.Source.ToString());
+
+            //                client.AddUser(TBLogin.Text, HashPass(PBPass.Password), TBNickname.Text, TBEmail.Text, ImageByte);
+
+            //                LBLMessage.Foreground = new SolidColorBrush(Colors.Green);
+            //                LBLMessage.Content = "!!!--You succesfully registred--!!!";
+            //                flagForSkipToReg = false;
+            //            }
+            //            else
+            //            {
+
+            //            }
+            //        }
+            //        else
+            //        {
+            //            LBLMessage.Foreground = new SolidColorBrush(Colors.Red);
+            //            LBLMessage.Content = "The same nickname is already exist";
+            //        }
+            //    }
+            //    else
+            //    {
+            //        LBLMessage.Foreground = new SolidColorBrush(Colors.Red);
+            //        LBLMessage.Content = "The same login is already exist";
+            //    }
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show("Process is down because: " + ex.Message);
+            //}
         }
 
         private void ClickAnAvatar(object sender, MouseButtonEventArgs e)
@@ -127,7 +132,7 @@ namespace UI
 
         private void ExitClick(object sender, RoutedEventArgs e)
         {
-            
+                
         }
     }
 }

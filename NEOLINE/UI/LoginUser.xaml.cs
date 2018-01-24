@@ -28,7 +28,7 @@ namespace UI
         {
             MainWindow MW = new MainWindow();
 
-            MW.canvasDen.Children.Add(new RegistrationUser());
+            //MW.canvasDen.Children.Add(new RegistrationUser());
             
         }
 
