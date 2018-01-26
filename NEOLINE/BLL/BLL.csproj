@@ -48,6 +48,10 @@
     <Compile Include="RealisationBLL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CreateDB\CreateDB.csproj">
+      <Project>{0ba35a78-66e9-4a87-83df-1db9b035d7e7}</Project>
+      <Name>CreateDB</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{bc719932-c193-47b8-beef-2c711ebc1ea5}</Project>
       <Name>DAL</Name>
