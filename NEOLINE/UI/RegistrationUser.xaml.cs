@@ -76,7 +76,7 @@ namespace UI
                     if (client.VerificationNickname(TBNickname.Text) == false)
                     {
                         if (flagForSkipToReg == true)
-                        {                   
+                        {
                             ImageByte = File.ReadAllBytes(MEAvatar.Source.LocalPath);
 
                             client.AddUser(TBLogin.Text, HashPass(PBPass.Password), TBNickname.Text, TBEmail.Text, ImageByte);

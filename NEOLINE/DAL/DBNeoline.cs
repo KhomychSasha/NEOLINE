@@ -14,11 +14,12 @@ namespace DBNeoline
         public OnlineShop()
             : base("name=OnlineShop")
         {
-            //Database.SetInitializer<OnlineShop>(new MyInitializer<OnlineShop>());
+
         }
 
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
+        //Database.SetInitializer<OnlineShop>(new MyInitializer<OnlineShop>());
     }
 }
