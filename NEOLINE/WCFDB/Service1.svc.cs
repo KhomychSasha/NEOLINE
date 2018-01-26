@@ -43,22 +43,22 @@ namespace WCFForOnlineShopCenter
 
         public bool VerificationOnExistUser(string login, string pass)
         {
-            return VerificationOnExistUser(login,pass);
+            return bll.VerificationOnExistUser(login,pass);
         }
 
         public bool VerificationLogin(string login)
         {
-            return VerificationLogin(login);
+            return bll.VerificationLogin(login);
         }
 
         public bool VerificationNickname(string nickname)
         {
-            return VerificationNickname(nickname);
+            return bll.VerificationNickname(nickname);
         }
 
         public bool VerificationEmail(string email)
         {
-            return VerificationEmail(email);
+            return bll.VerificationEmail(email);
         }
 
         public void UpdateProductPrice(string nameProduct, int price)
