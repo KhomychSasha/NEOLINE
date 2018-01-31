@@ -84,8 +84,6 @@ namespace UI
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            //canvasDen.Children.Add(new RegistrationUser());
-
             SPMX.Children.Add(new RegistrationUser());
         }
 

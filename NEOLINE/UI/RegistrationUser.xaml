@@ -38,7 +38,7 @@
 
         <Button x:Name="BTNSignup" Grid.Row="6" Margin="120,7,0,7" Content="Sign up" FontSize="17" Click="ClickBTNSignup"  />
 
-        <Label x:Name="LBLMessage" Margin="5" Grid.ColumnSpan="2" FontSize="17" Foreground="#DDFF1700" />
+        <Label x:Name="LBLMessage" Margin="5" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" FontSize="17" Foreground="#DDFF1700" />
 
         <Grid Grid.Column="1">
             
@@ -46,10 +46,9 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="BTNExit"  Grid.Column="3" Margin="3" Content="Exit" Click="ExitClick" />
+            <Button x:Name="BTNExit"  Grid.Column="3" Margin="3" Content="Closed" Click="ExitClick" />
             
         </Grid>
     </Grid>

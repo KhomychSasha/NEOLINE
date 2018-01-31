@@ -51,11 +51,6 @@ namespace UI
 
         private void ClickBTNSignup(object sender, RoutedEventArgs e)
         {
-            // MainWindow mw = new MainWindow();
-            //
-            // mw.Show();
-
-
             try
             {
                 Service1Client client = new Service1Client();
@@ -68,7 +63,7 @@ namespace UI
                 else
                 {
                     LBLMessage.Foreground = new SolidColorBrush(Colors.Orange);
-                    LBLMessage.Content = "Fill all fields upper";
+                    LBLMessage.Content = "Fill all fields down";
                 }
 
                 if (client.VerificationLogin(TBLogin.Text) == false)
@@ -130,7 +125,8 @@ namespace UI
 
         private void ExitClick(object sender, RoutedEventArgs e)
         {
-                
+            MainWindow mw = new MainWindow();
+            
         }
     }
 }
