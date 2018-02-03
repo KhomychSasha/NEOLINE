@@ -40,9 +40,9 @@ namespace WCFNeo
             bll.ChangeUserPass(login, pass);
         }
 
-        public void AddUser(string login, string pass, string nick, string email, byte[] avatar)
+        public void AddUser(string login, string pass, string nick, string email)
         {
-            bll.AddUser(login, pass, nick, email,avatar);
+            bll.AddUser(login, pass, nick, email);
         }
 
         public void AddProduct(string productName, string descr, byte[] photo, int userID, int AmountOfProduct, int price)

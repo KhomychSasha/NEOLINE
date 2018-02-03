@@ -739,10 +739,10 @@ namespace UI.ServiceReference1 {
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddUser", ReplyAction="http://tempuri.org/IService1/AddUserResponse")]
-        void AddUser(string login, string pass, string nick, string email, byte[] avatar);
+        void AddUser(string login, string pass, string nick, string email);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddUser", ReplyAction="http://tempuri.org/IService1/AddUserResponse")]
-        System.Threading.Tasks.Task AddUserAsync(string login, string pass, string nick, string email, byte[] avatar);
+        System.Threading.Tasks.Task AddUserAsync(string login, string pass, string nick, string email);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddProduct", ReplyAction="http://tempuri.org/IService1/AddProductResponse")]
         void AddProduct(string productName, string descr, byte[] photo, int userID, int AmountOfProduct, int price);
@@ -880,12 +880,12 @@ namespace UI.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public void AddUser(string login, string pass, string nick, string email, byte[] avatar) {
-            base.Channel.AddUser(login, pass, nick, email, avatar);
+        public void AddUser(string login, string pass, string nick, string email) {
+            base.Channel.AddUser(login, pass, nick, email);
         }
         
-        public System.Threading.Tasks.Task AddUserAsync(string login, string pass, string nick, string email, byte[] avatar) {
-            return base.Channel.AddUserAsync(login, pass, nick, email, avatar);
+        public System.Threading.Tasks.Task AddUserAsync(string login, string pass, string nick, string email) {
+            return base.Channel.AddUserAsync(login, pass, nick, email);
         }
         
         public void AddProduct(string productName, string descr, byte[] photo, int userID, int AmountOfProduct, int price) {

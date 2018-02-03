@@ -74,7 +74,7 @@ namespace UI
                         {
                             ImageByte = File.ReadAllBytes(MEAvatar.Source.LocalPath);
 
-                            client.AddUser(TBLogin.Text, HashPass(PBPass.Password), TBNickname.Text, TBEmail.Text, ImageByte);
+                            client.AddUser(TBLogin.Text, HashPass(PBPass.Password), TBNickname.Text, TBEmail.Text);
 
                             LBLMessage.Foreground = new SolidColorBrush(Colors.Green);
                             LBLMessage.Content = "!!!--You succesfully registred--!!!";

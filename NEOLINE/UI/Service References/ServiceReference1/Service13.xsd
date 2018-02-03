@@ -9,7 +9,6 @@
         <xs:element minOccurs="0" name="pass" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="nick" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="avatar" nillable="true" type="xs:base64Binary" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

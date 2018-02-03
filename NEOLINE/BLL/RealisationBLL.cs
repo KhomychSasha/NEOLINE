@@ -153,7 +153,7 @@ namespace BLL
             dal.ChangeUserPass(user);
         }
 
-        public void AddUser(string login, string pass, string nick, string email,byte[] avatar)
+        public void AddUser(string login, string pass, string nick, string email)
         {
             User user = new User()
             {
@@ -161,7 +161,6 @@ namespace BLL
                 Password = pass,
                 Nickname = nick,
                 Email = email,
-                Avatar = avatar
             };
 
             dal.AddUser(user);

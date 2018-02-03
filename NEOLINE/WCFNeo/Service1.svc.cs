@@ -15,7 +15,7 @@ namespace WCFNeo
     public interface IService1
     {
         [OperationContract]
-        void AddUser(string login, string pass, string nick, string email, byte[] avatar);
+        void AddUser(string login, string pass, string nick, string email);
 
         [OperationContract]
         void AddProduct(string productName, string descr, byte[] photo, int userID, int AmountOfProduct, int price);

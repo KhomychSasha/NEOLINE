@@ -10,7 +10,7 @@ namespace BLL
 {
     public interface IBLL
     {
-        void AddUser(string login, string pass, string nick, string email, byte[] avatar);
+        void AddUser(string login, string pass, string nick, string email);
 
         void AddProduct(string productName, string descr, byte[] photo, int ID, int AmountOfProduct, int price);
         
