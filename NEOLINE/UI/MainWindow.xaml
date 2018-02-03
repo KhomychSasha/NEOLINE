@@ -80,7 +80,7 @@
 
                 <TextBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" TextWrapping="Wrap" Text="Search" Foreground="#7F000000"  TextDecorations="{x:Null}" FontFamily="Segoe UI Emoji" FontSize="22"/>
                 <Button Grid.Column="5" Margin="5,5,55,5">
-                    <Image Source="C:\Users\Xam\source\repos\NEOLINE\NEOLINE\UI\Icon\search-logo-hi.png"/>
+                    <Image Source="Icon\Search.png"/>
                 </Button>
                 <Button x:Name="BTNRegistration" Content="Registration" Grid.Column="5" HorizontalAlignment="Left" Margin="100,8,-154.6,0" VerticalAlignment="Top" Width="175" Click="Button_Click_1"/>
 
