@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -30,6 +31,16 @@ namespace UI
 
             //MW.canvasDen.Children.Add(new RegistrationUser());
             
+        }
+        public static BitmapImage ConvertByteArrayToBitmapImage(byte[] bytes)
+        {
+            var stream = new MemoryStream(bytes);
+            stream.Seek(0, SeekOrigin.Begin);
+            var image = new BitmapImage();
+            image.BeginInit();
+            image.StreamSource = stream;
+            image.EndInit();
+            return image;
         }
 
         private string HashPass(string pass)
